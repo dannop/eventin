@@ -1,0 +1,53 @@
+<%= form_with(model: workshop, local: true) do |form| %>
+  <% if workshop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(workshop.errors.count, "error") %> prohibited this workshop from being saved:</h2>
+
+      <ul>
+      <% workshop.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="ui form">
+  <div class="field">
+    <%= form.label :título %>
+    <p><%= form.text_field :title, id: :workshop_title %></p>
+  </div>
+
+  <div class="field">
+    <%= form.label :"Data e Hora" %>
+    <%= form.datetime_select :the_day, id: :workshop_the_day %>
+  </div> 
+
+  <div class="field">
+    <%= form.label :"Número de vagas" %>
+    <p><%= form.number_field :vacancies, id: :workshop_vacancies %></p>
+  </div>
+
+  <div class="field">
+    <%= form.label :Descrição %>
+    <p><%= form.text_area :description, id: :workshop_description %></p>
+  </div>
+
+  <div class="field">
+    <%= form.label :Evento %>
+    <p><%= form.select(:event_id, @events.collect { |event| [event.name, event.id] }, {include_blank: "Nenhum"}) %></p>
+  </div>
+  
+  <div class="field">
+    <%= form.label "Selecione a categoria" %>
+    <%= form.select :category_id, @categorys.collect { |category| [category.kind, category.id] }, 
+      {include_blank: "Nenhuma"} %>
+  </div>
+
+  <div class="actions">
+    <div class="back"><%= form.submit "Enviar", :class => 'submit-butao' %></div>
+  </div>
+  </div>
+<% end %>
+
+<!--classe back está no workshops.scss na parte de form-->
+
+

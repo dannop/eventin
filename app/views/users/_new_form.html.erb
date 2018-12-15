@@ -1,0 +1,59 @@
+<div class="form-padrao">
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="ui form">
+  
+  <div class="field">
+  <div class="two fields">
+    <div class="field">
+      <%= form.label :Nome %>
+      <%= form.text_field :name, id: :user_name %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :Sobrenome %>
+      <%= form.text_field :last_name, id: :user_name %>
+    </div>
+  </div>
+  </div>
+    <div class="field">
+      <%= form.label :Email %>
+      <%= form.text_field :email, id: :user_email %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :password, "Senha" %>
+      <%= form.password_field :password %>
+    </div>
+    
+    <div class="field">
+      <%= form.label :password_confirmation, "Confirme sua senha" %>
+      <%= form.password_field :password_confirmation %>
+    </div>
+  
+    
+    <div class="field">
+      <div class="ui radio checkbox">
+        <%= form.label :Administrador %>
+        <%= form.check_box :adm, id: :user_adm %>
+      </div>
+    </div>
+    
+  </div>
+  
+    <div class="actions">
+     <%= form.submit 'Enviar', :class => 'btn-form-user' %>
+    </div>
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,26 @@
+<%= form_with(model: work_staff, local: true) do |form| %>
+  <% if work_staff.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(work_staff.errors.count, "error") %> prohibited this work_staff from being saved:</h2>
+
+      <ul>
+      <% work_staff.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "Selecione o Staff"%>
+    <%= form.select(:staff_id, @staffs.collect { |staff| [staff.name, staff.id] }, {include_blank: "Nenhuma"}) %>
+  </div>
+  <div class="field">
+    <%= form.label "Selecione a Palestra"%>
+    <%= form.select(:workshop_id, @workshops.collect { |workshop| [workshop.title, workshop.id] }, {include_blank: "Nenhuma"}) %>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

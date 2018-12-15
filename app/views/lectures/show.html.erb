@@ -1,0 +1,241 @@
+<% provide(:title, "Palestra | ")%>
+<p id="notice"><%= notice %></p>
+
+<div class="bloco-workshop-show">
+        <div class="bloco-titulo-show">
+            <p class="titulo-workshop-show"><%= @lecture.title %></p>
+            
+            <div class="barra-informacoes-show">
+              <% if @lecture.event.present? %>
+                <span>Evento: <%= @lecture.event.name%></span>
+                <span>Vagas: <%= @lecture.vacancies %></span>
+                <span>Data: <%= @lecture.the_day.day %>/<%= @lecture.the_day.month %>/<%= @lecture.the_day.year %></span>
+                <span>Hora: <%= @lecture.the_day.hour %>:<%= @lecture.the_day.min %></span>
+                <% if @category.present? %>
+                  <span>Categoria: <%= @category.kind %></span>
+                <% end %>
+              <% end %>
+            </div>
+        </div> 
+        
+        <div class="descricao-show">
+          <h4>Descrição</h4>
+          <p><%= @lecture.description %></p>
+        </div>
+        
+        <div class="membros-show">
+          <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+          
+          <% @lec_staffs.each do |ws|%>  
+            <% if ws.staff.present? %>
+                <div id="wrapper-ws">
+             	    <div id="slider-wrap-ws">
+                	  <ul id="slider-ws">
+                      <li data-color="#1abc9c">
+                        <% if ws.staff.photo.present? %>
+                          <%= image_tag(ws.staff.photo, :class => "foto-show") %>
+                        <% else %>
+                          <img class ="foto-show" src="/assets/noimage.jpg" alt="">
+                        <% end %>
+                                  
+                        <div class="nome-workshop-carrossel">
+                          <% if ws.staff.name.present? %>
+                              <%= ws.staff.name %>
+                          <% end %>
+                        </div>
+                                
+                        <% if @current_user.adm? %>
+                          <%= link_to 'Remover', ws, method: :delete,:class => 'btn-remover' %>
+                        <% end %>
+                      </li>
+                    </ul>
+          
+                    <!--controls-->
+                    <div class="btns-ws" id="next"><i class="fa fa-arrow-right"></i></div>
+                    <div class="btns-ws" id="previous"><i class="fa fa-arrow-left"></i></div>
+                    <div id="counter"></div>
+                    
+                    <div id="pagination-wrap">
+                      <ul>
+                      </ul>
+                    </div>
+                    <!--controls-->  
+                </div>
+              </div>
+            <% else %>
+              <p>Não possui Staff</p>
+            <% end %>
+          <% end %>
+      
+          <script>
+            //current position
+          var pos = 0;
+          //number of slides
+          var totalSlides = $('#slider-wrap-ws ul li').length;
+          //get the slide width
+          var sliderWidth = $('#slider-wrap-ws').width();
+          
+          
+          $(document).ready(function(){
+          	
+          	/*****************
+          	 BUILD THE SLIDER
+          	*****************/
+          	//set width to be 'x' times the number of slides
+          	$('#slider-wrap-ws ul#slider-ws').width(sliderWidth*totalSlides);
+          	
+              //next slide 	
+          	$('#next').click(function(){
+          		slideRight();
+          	});
+          	
+          	//previous slide
+          	$('#previous').click(function(){
+          		slideLeft();
+          	});
+          	
+          	
+          	/*************************
+          	 //*> OPTIONAL SETTINGS
+          	************************/
+          	
+          	//for each slide 
+          	$.each($('#slider-wrap-ws ul li'), function() { 
+          	   //set its color
+          	   var c = $(this).attr("data-color");
+          	   $(this).css("background",c);
+          	   
+          	   //create a pagination
+          	   var li = document.createElement('li');
+          	   $('#pagination-wrap ul').append(li);	   
+          	});
+          	
+          	//counter
+          	countSlides();
+          	
+          	//pagination
+          	pagination();
+          	
+          	//hide/show controls/btns when hover
+          	//pause automatic slide when hover
+          	$('#slider-wrap-ws').hover(
+          	  function(){ $(this).addClass('active'); clearInterval(autoSlider); }, 
+          	  function(){ $(this).removeClass('active'); autoSlider = setInterval(slideRight, 3000); }
+          	);
+          	
+          });//DOCUMENT READY
+          	
+          /***********
+           SLIDE LEFT
+          ************/
+          function slideLeft(){
+          	pos--;
+          	if(pos==-1){ pos = totalSlides-1; }
+          	$('#slider-wrap-ws ul#slider-ws').css('left', -(sliderWidth*pos)); 	
+          	
+          	//*> optional
+          	countSlides();
+          	pagination();
+          }
+          
+          /************
+           SLIDE RIGHT
+          *************/
+          function slideRight(){
+          	pos++;
+          	if(pos==totalSlides){ pos = 0; }
+          	$('#slider-wrap-ws ul#slider-ws').css('left', -(sliderWidth*pos)); 
+          	
+          	//*> optional 
+          	countSlides();
+          	pagination();
+          }
+          
+          
+          /************************
+           //*> OPTIONAL SETTINGS
+          ************************/
+          function countSlides(){
+          	$('#counter').html(pos+1 + ' / ' + totalSlides);
+          }
+          
+          function pagination(){
+          	$('#pagination-wrap ul li').removeClass('active');
+          	$('#pagination-wrap ul li:eq('+pos+')').addClass('active');
+          }
+          </script>
+      </div>
+        
+        <div class="membros-show">
+                
+    
+    
+                <p class="adicionar-staff-workshop">Arquivos</p>
+                <% if @lecture.archives.count > 0 %>
+              <% @archives.each do |archive| %>
+                <%= link_to archive.name , archive.attachment_url,:class=> "adicionar-staff-workshop"  %>
+                Descrição do Arquivo:
+                <%= archive.description %>
+                <% if current_user.adm? %>
+                  <td><%= button_to "Remover",  archive, method: :delete, confirm: "Voce tem certeza que deseja deletar #{archive.name}?" %></td>
+                <% end %>
+              <% end %>
+            <% else %>
+              <p class="adicionar-staff-workshop"> Não possui arquivos </p>
+            <% end %>
+            
+            
+        </div>
+        
+        <div class="clear"></div>
+        
+        <div class="botoes-show-workshop">
+          <div class="btn-show-1">
+          <% if @lecusers.find_by(lecture_id: @lecture.id, user_id: current_user.id)%>
+            <%= link_to 'Cancelar', lecture_inscription_path(@lecture.id), method: :patch, id: "detalhes"%>
+          <% else %>
+            <%= link_to 'Inscreva-se', lecture_inscription_path(@lecture.id), method: :patch, id: "detalhes"%>
+          <% end %>
+    </div>
+      
+    <div class="btn-show-1">
+        <%= link_to 'Voltar', lectures_path, id: "detalhes" %>
+    </div>
+    </div>
+</div>
+
+<div class="container-adm-1">
+  <% if current_user.adm %>
+    <p class="adicionar-staff-workshop">Adicionar Organizador</p>
+                
+      <%= form_for( @lec_staff, url: add_lec_staff_path, method: :patch) do |form| %>
+        <% if @lec_staff.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@work_staff.errors.count, "error") %> prohibited this @work_staff from being saved:</h2>
+            <ul>
+              <% @work_staff.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="ui form">
+          <%= form.select(:staff_id, @staffs.collect { |staff| [staff.name, staff.id] }, {include_blank: "Membros Disponíveis"}) %>
+        </div>
+                    
+        <div class="actions">
+          <div class="btn-palestrante-workshop"><%= form.submit "Adicionar palestrante", :class => 'submit-butao' %></div>
+        </div>
+    <% end %>
+  <% end %>
+</div>                
+
+<div class="container-adm-1">
+    <% if current_user.adm? %>
+      <%= render partial: "new_file" %>
+    <% end %>
+</div>
+
+<% if current_user.adm? %>
+    <%= link_to 'Editar', edit_lecture_path(@lecture), id: "btn-editar-workshops" %>
+<% end %>

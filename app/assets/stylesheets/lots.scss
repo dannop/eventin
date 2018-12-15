@@ -1,0 +1,265 @@
+// Place all the styles related to the Lots controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// -------------------------------- Página Update_Available ---------------------------
+
+
+.titulo-index-lots{
+    width:400px;
+    height:80px;
+    border:3.5px solid #eb4444;
+    margin:0 auto;
+    margin-top:60px;
+}
+
+.titulo-index-lots h3{
+    text-align:center;
+    font-weight:bold;
+    font-size:1.8em;
+    color:#eb4444;
+    text-transform:uppercase;
+    line-height:30px;
+}
+
+.container-principal-lots{
+    width:95%;
+    margin:0 auto;
+    background:#fff;
+    margin-top:20px;
+    border:1px solid gray;
+    border-radius:5px;
+}
+
+.bloco-lot{
+    display:block;
+    width:610px;
+    margin: 10px auto;
+}
+
+.bloco-lot-2{
+    display:block;
+    width:815px;
+    margin: 10px auto;
+}
+
+.container-infos-lots{
+    display:inline-block;
+    width:200px;
+    height:70px;
+    background:#fff;
+    // margin-right:5px;
+    border-radius:5px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    box-shadow: 5px 5px 5px #888888;
+}
+
+.container-infos-lots p{
+    display:block;
+    width:170px;
+    margin:10px auto;
+    text-align:center;
+    color:#000;
+    font-weight:bold;
+}
+
+.container-btn-lots{
+    display:block;
+    width: 600px;
+    height: 50px;
+    background: #fff;
+    padding-top: 10px;
+    margin:0 auto;
+}
+
+.btn-index-lots{
+    display:inline-block;
+    margin:0 auto;
+    width:120px;
+    height:30px;
+    background:#eb4444;
+    color:#fff;
+    line-height:30px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.2s;
+    margin-right:10px;
+    margin-left:10px;
+    text-align:center;
+}
+
+.btn-index-lots:hover{
+    background:red;
+    transition:0.2s;
+}
+
+// -------------------------------- Página Index ---------------------------
+
+// Foi usado no botão "novo lote" a classe submit-butao, presente na sessão form.css
+
+.novo-lote-btn{
+    display:block;
+    width:107px;
+    margin:20px auto;
+}
+
+// ---------------------------------- página Form ---------------------------
+
+.actions-lots{
+    display:block;
+    width:75px;
+    height:40px;
+    margin:0 auto;
+}
+
+// --------------------------------- página Editar --------------------------
+
+// a classe titulo-index-lots estão na parte Update_Available dessa página 
+
+.container-btn-lots-edit{
+    display:block;
+    width: 285px;
+    height: 50px;
+    background: #f4f4f4;
+    padding-top: 10px;
+    margin:20px auto;
+}
+
+.btn-edit-lots{
+    display:inline-block;
+    margin:0 auto;
+    width:120px;
+    height:30px;
+    background:#eb4444;
+    color:#fff;
+    line-height:30px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.2s;
+    margin-right:10px;
+    margin-left:10px;
+    text-align:center;
+}
+
+.btn-edit-lots:hover{
+    background:red;
+    transition:0.2s;
+}
+
+// --------------------------------- Página New -----------------------------
+
+// a classe titulo-index-lots estão na parte Update_Available dessa página 
+
+.container-btn-lots-new{
+    display:block;
+    width: 140px;
+    height: 50px;
+    background: #f4f4f4;
+    padding-top: 10px;
+    margin:20px auto;
+}
+
+.btn-new-lots{
+    display:block;
+    width:120px;
+    height:30px;
+    background:#eb4444;
+    color:#fff;
+    line-height:30px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.2s;
+    margin-right:10px;
+    margin-left:10px;
+    text-align:center;
+}
+
+.btn-new-lots:hover{
+    background:red;
+    transition:0.2s;
+}
+//------------------
+.clear{
+    clear:both;
+}
+
+// ----------------------- Responsividade da página Index ---------------------
+
+@media only screen and (min-width:320px) and (max-width:767px){
+    .titulo-index-lots{
+        width:95%;
+    }
+
+    .titulo-index-lots h3{
+        line-height:15px;
+    }
+    
+    .bloco-lot{
+        width:100%;
+    }
+    
+    .bloco-lot-2{
+        width:100%;
+    }
+    
+    .container-infos-lots{
+        display:block;
+        width:90%;
+        height:80px;
+        margin:10px auto;
+        border: 1px solid #000;
+        box-shadow: 5px 5px 5px #888888;
+    }
+    
+    .container-infos-lots p{
+        display:block;
+    }
+    
+    .container-btn-lots{
+        display:block;
+        width: 285px;
+        height: 90px;
+        margin-bottom:15px;
+    }
+    
+    .btn-index-lots{
+        display:inline-block;
+        margin:5px auto;
+        width:120px;
+        height:30px;
+        margin-right:10px;
+        margin-left:10px;
+        text-align:center;
+    }
+    
+}
+
+@media only screen and (min-width:768px) and (max-width:1023px){
+    .bloco-lot{
+        display:block;
+        width:460px;
+        margin: 10px auto;
+    }
+
+    .bloco-lot-2{
+        display:block;
+        width:615px;
+        margin: 10px auto;
+    }
+    
+    .container-infos-lots{
+        display:inline-block;
+        width:150px;
+        height:70px;
+        background:#fff;
+        margin: 0 auto;
+    }
+    
+    .container-infos-lots p{
+        display:block;
+        width:100%;
+        margin:10px auto;
+        text-align:center;
+    }
+}

@@ -1,0 +1,47 @@
+<div class="form-padrao">
+<%= form_with(model: ej, local: true) do |form| %>
+  <% if ej.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ej.errors.count, "error") %> prohibited this ej from being saved:</h2>
+
+      <ul>
+      <% ej.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="ui form">
+  
+  <div class="field">
+    <%= form.label "Nome da Empresa Junior:" %>
+    <%= form.text_field :name, id: :ej_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label "college:" %>
+    <%= form.text_field :college, id: :ej_college %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Selecione a Federação:"%>
+    <%= form.select(:federation_id, @federations.collect { |federation| [federation.name, federation.id] }, {include_blank: "Nenhuma"}) %>
+  </div>
+  
+  <div class="field">
+      <%= form.label "federated:"%>
+      <%= form.check_box :federated, id: :ej_federated %>
+  </div>
+  
+  <div class="field">
+    <%= form.label "Icone:" %>
+    <%= form.file_field :icon, id: :ej_icon %>
+  </div>
+
+  <div class="actions-ej">
+    <%= form.submit 'Criar', :class => "btn-form-ejs" %>
+  </div>
+</div>
+<% end %>
+</div>

@@ -1,0 +1,71 @@
+<div class="staffs-intro">
+            <h1>NOSSA EQUIPE</h1>
+        </div>
+        <% @staffs.each do |staff| %>
+            <div class="equipe">
+                <div class="foto">
+                  <% if staff.photo.present? %> 
+                     <%= image_tag(staff.photo_url,width:150,height:150) %>
+                  <% else %>
+                    <img class ="user" src="/assets/noimage.jpg" alt="">
+                  <% end %> %>
+                </div>
+              <h3><%= staff.name %></h3>
+              <div class="redes-sociais">
+                 <div class="centralizar">
+                <% if staff.link_facebook.present? %>  
+                    <%= link_to staff.link_facebook do %>
+                        <div class="fb">
+                            <img style="margin:0;" src="/assets/fb.svg" width="30" alt="">
+                        </div>
+                    <% end %>
+                <% end %>
+                
+                <% if staff.link_instagram.present? %>
+                    <%= link_to staff.link_instagram do %>
+                        <div class="instagram">
+                            <img src="/assets/insta.svg" style="width:26px;top:-4px;position:relative;left:-2px;" alt="">
+                        </div>
+                    <% end %>
+                <% end %>
+                
+                <% if staff.link_twitter.present? %>
+                    <%= link_to staff.link_twitter do %>
+                        <div class="twitter">
+                            <img src="/assets/twitt.svg" width="32" alt="">
+                        </div>
+                    <% end %>
+                <% end %>
+                </div>
+              </div>
+              
+              <div class="staff-links-index">
+                  <div class="centralizar-btn"> 
+                      <% if current_user.adm %>
+                          <div class="centralizar-editar-staff">
+                        <%= link_to 'Editar', edit_staff_path(staff),:class=> "btn-staff-index" %>
+                            </div>
+                      <% end %>
+                      <div class="centralizar-ver-mais-staff">
+                          <%= link_to 'Ver Mais', staff_path(staff),:class=> "btn-staff-index" %>
+                      </div>
+                      <% if current_user.adm %>
+                          <div class="centralizar-excluir-staff">
+                        <%= link_to 'Excluir', staff, method: :delete, data: { confirm: 'Are you sure?' },:class=> "btn-staff-index" %>
+                        </div>
+                      <% end %>
+                  </div>
+              </div> 
+            </div>
+        <% end %>
+        
+        
+        <%= will_paginate @staffs, :previous_label => 'Anterior', :next_label => 'Próxima', :class => "paginacao-staffs"%>
+        
+        <% if current_user.adm %>
+        <div class="staff-but">
+             <%= link_to 'Novo membro', new_staff_path,:class => "submit-butao" %>
+        </div>
+        <% end %>
+    
+

@@ -1,0 +1,420 @@
+// Place all the styles related to the Staffs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.texto-principal{
+    margin-left:2%;
+    display:inline;
+}
+
+.staffs-intro {
+    margin-left: 20px;
+    color: #ed4343;
+    width:270px;
+    padding: 13px 0px;
+    border:3.5px solid #ed4343;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.staffs-intro h1 {
+    text-align: center;
+    opacity:0.89;
+}
+
+.equipe{
+    border-radius:2%;
+    width:33%;
+    margin-top:50px;
+    display:inline-block;
+    margin:auto;
+    left:20px;
+    margin-top:50px;
+}
+
+.equipe h3{
+    text-align:center;
+}
+
+.foto {
+    border-radius:50%;
+    position: relative;
+    overflow: hidden;
+    width:150px;
+    height:150px;
+    background:#f4f4f4;
+    margin:10px auto;
+}
+
+.foto img {
+    width:150px;
+    height:150px;
+    object-fit:cover;
+}
+
+.redes-sociais {
+    display:block;
+    width:100%;
+    height:40px;
+    margin:0 auto;
+    background:#f4f4f4;
+}
+
+.centralizar{
+    display:block;
+    width:140px;
+    height:40px;
+    background:#f4f4f4;
+    margin:0 auto;
+}
+
+.fb{
+    display:inline-block;
+    margin:0 auto;
+}
+
+.instagram{
+    display:inline-block;
+    margin:0 auto;
+    margin-top:-10px;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+.twitter{
+    display:inline-block;
+    margin:0 auto;
+}
+
+.staff-links-index {
+    width:100%;
+    display:block;
+    margin:0 auto;
+    background:#f4f4f4;
+}
+
+.centralizar-btn{
+    display:block;
+    width:328px;
+    height:40px;
+    background:#f4f4f4;
+    margin:0 auto;
+}
+
+.btn-staff-index{
+    margin:0;
+    padding:6px 20px 4.5px 20px;
+    border:1px solid #ed4343;
+    text-align:center;
+    color:#ed4343;
+    transition:0.2s;
+    border-radius:50px;
+    font-size:11.7px;
+    text-transform:uppercase;
+    display:block;
+    height:100%;
+    max-height:25px;
+    float:none;
+    width:auto;
+}
+
+.btn-staff-index:hover{
+    transition:0.4s;
+    background:#ed4343;
+    color:#fff;
+}
+
+.centralizar-editar-staff{
+    display:inline-block;
+    width:106.5px;
+    height:30px;
+    background:#f4f4f4;
+    position:absolute;
+    margin-left:220px;
+}
+
+.centralizar-excluir-staff{
+    display:inline-block;
+    width:106.5px;
+    height:30px;
+    background:#f4f4f4;
+    position:absolute;
+}
+
+.centralizar-ver-mais-staff{
+    display:inline-block;
+    width:106.5px;
+    height:30px;
+    background:#f4f4f4;
+    position:absolute;
+    margin-left:110px;
+    margin-right:110px;
+}
+
+.paginacao-staffs{
+    text-transform:uppercase;
+    text-align:center;
+    margin-top:20px;
+    margin-bottom:20px;
+    color:#000;
+}
+
+.staff-but {
+    margin:20px auto;
+    display:flex;
+    justify-content:center
+}
+
+
+// ----------------------------------------- Responsividade - Index (Mobile) ---------------------------------
+
+@media only screen and (min-width:320px) and (max-width:767px){
+    .equipe{
+        width:98%;
+        display:block;
+        margin:30px auto;
+        left:0;
+    }
+    
+    .centralizar-btn{
+        width:90%;
+    }
+    
+    .centralizar-editar-staff{
+        width:25%;
+        position:absolute;
+        margin-left:62%;
+    }
+
+    .centralizar-excluir-staff{
+        width:25%;
+        position:absolute;
+        margin-left:2%;
+    }
+
+    .centralizar-ver-mais-staff{
+        width:31%;
+        position:absolute;
+        margin-left:29%;
+    }
+    
+    
+}
+
+@media only screen and (min-width:768px) and (max-width:1024px){
+    .equipe{
+        width:100%;
+        display:block;
+        margin:30px auto;
+        left:0;
+    }
+    
+    
+}
+
+// ----------------------------------------- Página Show.html ---------------------------------
+
+.clear{
+    clear:both;
+}
+
+.titulo-show-staff{
+    width:400px;
+    height:80px;
+    border:6px solid #ed4444;
+    margin:0 auto;
+    margin-top:60px;
+}
+
+.titulo-show-staff h3{
+    text-align:center;
+    font-weight:bold;
+    font-size:2em;
+    color:#ed4444;
+    text-transform:uppercase;
+    line-height:10px;
+}
+
+.principal-staff-show{
+    width:700px;
+    height:350px;
+    margin:40px auto;
+    background:#fff;
+    border:2px solid #000;
+    border-radius:5px;
+    display:block;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.titulo-staff-show{
+    text-align:center;
+    text-transform:uppercase;
+    
+}
+
+.container-foto-staff-show{
+    width:200px;
+    height:200px;
+    float:left;
+    border-radius:5px;
+    margin-left:30px;
+    margin-top:20px;
+    background:#fff;
+}
+
+.foto-staff-show{
+    display:inline;
+    width:200px;
+    height:200px;
+    float:left;
+    border:1px solid #000;
+    border-radius:5px;
+}
+
+.staff-show{
+    display:block;
+    width:100%;
+    height:40px;
+    background:gray;
+    margin-top:45px;
+}
+
+.nomes-staff{
+    display:inline;
+    float:left;
+    width:300px;
+    height:80px;
+    margin-top:20px;
+    margin-left:80px;
+    background:#fff;
+    
+}
+
+.nome-staff-show{
+    text-align: center;
+    line-height:40px;
+    text-transform:uppercase;
+    font-size:1.5em;
+    font-family:Arial;
+    color:#fff;
+    font-weight:bold;
+    text-align:center;
+}
+
+.nomes-show-staff{
+    text-align: center;
+    text-transform:uppercase;
+    font-size:1em;
+    font-family:Arial;
+    color:#000;
+    font-weight:bold;
+    background:#fff;
+}
+
+.descricao-staff-show{
+    float:left;
+    width:380px;
+    height:90px;
+    margin-top:20px;
+    margin-left:40px;
+    background:#fff;
+    display:block;
+    text-align:center;
+    overflow: hidden;
+    
+}
+
+.foto-selo-staff{
+    width:80px;
+    float:left;
+    margin-right:40px;
+    display:inline;
+}
+
+.container-btn-staff-show{
+    margin:0 auto;
+    width:250px;
+    height:90px;
+    background:#f4f4f4;
+    
+}
+
+.btn-staff-show{
+    display:block;
+    width:120px;
+    height:30px;
+    background:#eb4444;
+    color:#fff;
+    border-radius:5px;
+    text-align:center;
+    margin:10px auto;
+    line-height:30px;
+    text-transform:uppercase;
+}
+
+.btn-staff-show:hover{
+    transition:0.4s;
+    background:red;
+    color:#fff;
+}
+    
+//  new e edit foram usadas funções criadas pro show do staff e nessa mesma ordem
+    
+
+
+// --------------- responsivo da página ejs show ----------------
+
+@media only screen and (min-width:320px) and (max-width:767px){
+    .titulo-show-staff{
+        width:300px;
+        margin-top:80px;
+    }
+
+    .titulo-show-staff h3{
+        font-size:1.7em;
+        line-height:20px;
+    }
+    
+    .principal-staff-show{
+        width:300px;
+        height:550px;
+    }
+    
+    .titulo-staff-show{
+        font-size:1.225em;
+        
+    }
+    
+    .container-foto-staff-show{
+        float:none;
+        margin:0 auto;
+    }
+    
+    .staff-show{
+        margin-top:5px;
+    }
+    
+    .nome-staff-show{
+        margin-top:5px;
+    }
+    
+    .nomes-staff{
+        display:block;
+        float:none;
+        width:290px;
+        margin:0 auto;
+    }
+    
+    .descricao-staff-show{
+        display:block;
+        float:none;
+        width:290px;
+        height:140px;
+        margin:0 auto;
+    }
+}
+
+
+

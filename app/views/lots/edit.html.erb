@@ -1,0 +1,11 @@
+
+<div class="titulo-index-lots">
+  <h3>Editar Lote</h3>
+</div>
+
+<%= render 'form', lot: @lot %>
+
+<div class="container-btn-lots-edit">
+  <%= link_to 'Ver Mais', @lot,:class => "btn-edit-lots" %> 
+  <%= link_to 'Voltar', lots_path,:class => "btn-edit-lots" %>
+</div>

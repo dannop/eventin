@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<div class="titulo-show-staff">
+  <h3>Equipe</h3>
+</div>
+
+<div class="principal-staff-show">
+  <h2 class="titulo-staff-show">Passaporte EFEJ 2017</h2>
+  
+  <div class="container-foto-staff-show">
+          <% if @staff.photo.present? %> 
+            <%= image_tag(@staff.photo_url, :class => "foto-staff-show") %>
+          <% else %>
+            <img class ="foto-staff-show" src="/assets/noimage.jpg" alt="">
+          <% end %>
+  </div>
+
+  
+  <div class="staff-show">
+        <p class="nome-staff-show"><%= @staff.name %></p>
+    </div>
+  
+  <div class="nomes-staff">
+    <p class="nomes-show-staff"><%= @staff.age %> anos</p>
+    <p class="nomes-show-staff"><%= @staff.job %></p>
+    
+  </div>
+  
+  <div class="descricao-staff-show">
+        <%= @staff.description %>
+    </div>
+  
+  <div class="clear"></div>
+  
+  
+
+</div>
+
+<div class="container-btn-staff-show">
+      <% if current_user.adm %>
+          <%= link_to 'Editar', edit_staff_path(@staff),:class=> "btn-staff-show" %>
+          <% end %>
+  
+      <%= link_to 'Voltar', staffs_path,:class=> "btn-staff-show" %>
+  </div>

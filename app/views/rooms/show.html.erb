@@ -1,0 +1,52 @@
+<% provide(:title, "Quarto | ")%>
+<div class="room">
+<div class="room-image">
+  <div class="room-card">
+    <div class="room-dados">
+      <span><img src="/assets/room_key.svg" width="25"></img>  Quarto: <strong>nrº <%= @room.number %></strong></span>
+      <span><img src="/assets/singer_bed.svg" class="singer_bed" width="30"></img>  Camas(solteito): <%= @room.bed_one %></span>
+      <span><img src="/assets/hot2.svg" class="singer_bed" width="30"></img>  Camas(casal): <%= @room.bed_two %></span>
+    </div>
+    <div class="room-info insc">
+      <ul class="bxslider">
+        <% @room.users.each do |t|%>
+          <% if t.photo.present? %>
+            <div class="carrossel">
+              <%= image_tag(t.photo_url, :class => "foto") %>
+            </div>
+          <% else %>
+            <div class="carrossel">
+              <img class="user" src="/assets/default-user.png" alt="">
+            </div>
+          <% end %>
+        <% end %>
+      </ul>
+      <script>
+        $(document).ready(function(){
+          $('.bxslider').bxSlider({
+            minSlides: 1,
+            maxSlides: 3,
+            moveSlides: 1,
+            slideMargin: 10,
+            auto: true    
+          });
+        });
+      </script>
+    <a class="room-faq">FAQ</a>
+    <% if @room.bed_one + @room.bed_two*2 > 0 %>
+      <% if current_user.room_id == @room.id %>
+        <td><%= link_to 'Cancelar', room_inscription_path(@room.id), method: :patch, id: "inscription", :class => "btn-insc"%></td>
+      <% else %>
+        <td><%= link_to 'Registrar-se', room_inscription_path(@room.id), method: :patch, id: "inscription", :class => "btn-insc"%></td>
+      <% end %>
+    <% else %>
+      <% if current_user.room_id == @room.id %>
+        <td><%= link_to 'Cancelar', room_inscription_path(@room.id), method: :patch, id: "inscription", :class => "btn-insc"%></td>
+      <% else %>
+        <td>Não há vaga disponível</td>
+      <% end %>
+    <% end %>
+</div>
+  </div>
+</div>
+</div>

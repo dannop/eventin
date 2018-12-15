@@ -1,0 +1,67 @@
+<% provide(:title, "Usuarios | ")%>
+<div class="acomods" id="acomods">
+  <div class="users">
+    <p id="notice"><%= notice %></p>
+    <div class="busca-users">
+      <%= form_tag(users_path, method: :get) do %>  
+        <%= text_field_tag :term, params[:term], :placeholder => "Procure por nomes..",:class => "busca-input" %>
+        <%= submit_tag 'Encontrar', name: nil,:class => "busca-submit" %>
+      <% end %>    
+    </div>  
+  <table class="ui striped table" id="users_adm">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Cpf</th>
+        <th>Birth</th>
+        <th>Gender</th>>
+        <th>Ej</th>
+        <th>Room</th>
+        <th>Email Confirm</th>
+        <th>Photo</th>
+        <th>Payment status</th>
+        <th colspan="11"></th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.last_name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.cpf %></td>
+          <td><%= user.birth %></td>
+          <td><%= user.gender %></td>
+          <td>
+            <% if user.ej.present? %>
+              <%= user.ej.name %>
+            <% end %>
+          </td>
+          <td><%= user.room %></td>
+          <td><%= user.email_confirmed %></td>
+          <td><%= image_tag(user.photo, :class => "userimage") %></td>
+          <td>
+            <% if user.payment_status? %>
+              Pago
+            <% else %>
+              Pagamento Pendente 
+            <% end %>
+          </td>
+          <td><%= link_to 'Atualizar Pagamento', update_payment_path(user), method: :patch, :class => "btn-index-users" %></td>
+          <td><%= link_to 'Show', user %></td>
+          <td><%= link_to 'Edit', edit_user_path(user) %></td>
+          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+    <div class="users-footer">
+      <%= will_paginate @users%>
+      <%= link_to 'New User', new_user_path %> |
+      <%= link_to 'Home', root_path %>
+    </div>
+  </div>
+</div>

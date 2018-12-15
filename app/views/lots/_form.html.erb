@@ -1,0 +1,61 @@
+<div class="form-padrao">
+<%= form_with(model: lot, local: true) do |form| %>
+  <% if lot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lot.errors.count, "error") %> prohibited this lot from being saved:</h2>
+
+      <ul>
+      <% lot.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="ui form">
+  <div class="field">
+    <%= form.label :"Preço sem Acomodação" %>
+    <%= form.text_field :price, id: :lot_price %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :"Preço com Acomodação" %>
+    <%= form.text_field :room_with, id: :lot_room_with %>
+  </div>
+
+  <div class="field">
+    <%= form.label :"Data e Horário de Inicio" %>
+    <%= form.datetime_select :open_date, id: :lot_open_date %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :"Data e Horário do Final" %>
+    <%= form.datetime_select :close_date, id: :lot_close_date %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :evento_id %>
+    <%= form.text_field :event_id, id: :lot_event_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :"Total de Ingressos" %>
+    <%= form.number_field :ticket_total, id: :lot_ticket_total %>
+  </div>
+  <div class="field">
+    <%= form.label :"Ingressos Disponíveis" %>
+    <%= form.number_field :ticket_current, id: :lot_ticket_current %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :Purchasable %>
+    <%= form.check_box :purchasable, id: :lot_purchasable %>
+  </div>
+
+  <div class="actions-lots">
+    <%= form.submit "Enviar",:class => "submit-butao" %>
+  </div>
+  
+</div>
+<% end %>
+</div>

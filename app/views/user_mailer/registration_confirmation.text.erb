@@ -1,0 +1,5 @@
+Ola <%= @user.name %>,
+
+Obrigado pela incricao! Para confirmar sua incricao clique no link abaixo.
+
+<%=  link_to "Confirm", confirm_email_url(@user.confirm_token)%>

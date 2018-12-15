@@ -1,0 +1,170 @@
+<% provide(:title, "Perfil | ")%>
+<p id="notice"><%= notice %></p>
+<h1 class="titulo-users">Meu Perfil</h1>
+
+<div class="container-principal-users">
+  <div class="container-foto-users">
+    <% if @user.photo.present? %>
+      <%= image_tag(@user.photo, :class => "user-picture")%>
+    <% else %>
+      <img class="user-picture" src="/assets/default-user.png" alt="">
+    <% end %>
+  </div>
+      
+  <div class="nome-users">
+    <%= @user.name %> <%= @user.last_name if @user.last_name.present? %>
+  </div>
+        
+  <p class="dados-titulo-users">Meus Dados</p>
+        
+  <div class="container-info-users">
+    <div class="container-parte-1">
+      <div class="bloco-itens-users">
+        <% if @user.email.present? %>
+          <div class="nomes-info">
+            <p>Email:</p>
+          </div>
+                  
+          <p class="info-users"><%= @user.email %></p>
+        <% end %>
+      </div>
+              
+      <!--<div class="bloco-itens-users">-->
+        <% if @user.cpf.present? %>
+          <div class="nomes-info">
+            <p>CPF:</p>
+          </div>
+            
+          <p class="info-users"><%= @user.cpf %></p>
+        <% end %>
+      <!--</div>-->
+              
+      <div class="bloco-itens-users">
+        <% if @user.birth.present? %>
+          <div class="nomes-info">
+            <p>Nascimento:</p>
+          </div>
+                
+          <p class="info-users"><%= @user.birth.day %>/<%= @user.birth.month %>/<%= @user.birth.year %></p>
+        <% end %>
+      </div>
+    </div>
+          
+    <div class="container-parte-1">
+      <div class="bloco-itens-users">
+        <% if @user.gender.present? %>
+          <div class="nomes-info">
+            <p>Gênero:</p>
+          </div>
+          <% if @user.gender? %>
+            <p class="info-users">Homem</p>
+          <% else %>
+            <p class="info-users">Mulher</p>
+          <% end %>
+        <% end %>
+      </div>
+              
+      <!--<div class="bloco-itens-users">-->
+        <% if @user.ej.present? %>
+          <div class="nomes-info">
+            <p>Empresa:</p>
+          </div>
+                
+          <p class="info-users"><%= @user.ej.name %></p>
+        <% end %>
+      <!--</div>-->
+    
+        
+      <div class="bloco-itens-users">
+        <div class="nomes-info">
+          <p>Email Confirmado:</p>
+        </div>
+        
+        <% if @user.email_confirmed? %>        
+            <p class="info-users">Sim</p>
+        <% else %>
+            <p class="info-users">Não</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+        
+  <div class="clear"></div>
+</div>
+    
+<div class="parte-2">
+  <div class="container-pagamento-acomodacao-users">
+    <div class="container-pag">
+      <h4>Status de Pagamento</h4>
+      <%= @user.payment_status %>
+    </div>
+            
+    <div class="container-acomod">
+      <h4>Acomodação</h4>
+      <% if @user.room.present? %>
+        <ul>Hotel: <%= @user.room.hotel.name %></ul>
+      <% end %>
+      <% if @user.room.present? %>
+        <ul>Quarto: nº<%= @user.room.number %></ul>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="container-palestras-users">
+      <h4>Palestras & Workshops</h4>
+      <div id="countdown2" class="countdown countdown-home">
+        <% if @event.present? && @event.activity_begin_day > Time.now %>
+          <div id="lecture_begin_day_timer"></div>
+          <script class="aaa">
+            var year = <%= @event.activity_begin_day.year %>;
+            var month = <%= @event.activity_begin_day.month %>;
+            var day = <%= @event.activity_begin_day.day %>;
+        
+            var date = new Date(year, month, day);
+            $("#lecture_begin_day_timer").countdown({until: date});
+          </script>
+          <span>para a abertura das atividades</span>
+        <% else %>
+          <h3>Palestras</h3>
+          <% if !@lec_user.nil?%>
+            <% if @lec_user.count != 1 %>
+              <% @lec_user.limit(4).each do |lu|%>
+                <%= link_to lecture_path(@lecture.id) do %>
+                  <ul><%= lu.lecture.title %></ul>
+                <% end %> 
+              <% end %>
+            <% else %>
+              <%= link_to lecture_path(@lecture.id) do %>
+                <ul><%= @lec_user.first.lecture.title %></ul>
+              <% end %>
+            <% end %>
+          <% end%>
+
+          <h3>Workshops</h3>
+          <% if !@work_user.nil?%>
+            <% if @work_user.count != 1 %>
+              <% @work_user.limit(2).each do |wu|%>
+                <%= link_to workshop_path(@workshop.id) do %>
+                  <ul><%= wu.workshop.title %></ul>
+                <% end %>
+              <% end %>
+            <% else %>
+              <%= link_to workshop_path(@workshop.id) do %>
+                <ul><%= @work_user.first.workshop.title %></ul>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+  </div>
+</div>
+
+<div class="clear"></div>
+
+<div class="botoes-show-user">
+  <%= link_to 'Home', root_path,:class => "btn-show-user" %>  
+  <%= link_to 'Editar', edit_user_path(@user),:class => "btn-show-user" %> 
+  <% if current_user.adm? %>
+    <%= link_to 'Voltar', users_path,:class => "btn-show-user" %>
+  <% end %>
+</div>

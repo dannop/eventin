@@ -1,0 +1,44 @@
+<% provide(:title, "Transferencias | ")%>
+
+    <div class="titulo-transfer">   
+        <h3>Transferências</h3>
+    </div>
+
+    <div class="busca-transfer">
+        <%= form_tag(transfers_path, method: :get) do %>  
+          <%= text_field_tag :term, params[:term], :placeholder => "Procure por nomes..",:class => "busca-input-transfer" %>
+          <%= submit_tag 'Encontrar', name: nil,:class => "busca-submit-transfer" %>
+        <% end %>    
+    </div>
+ <table class="ui striped table">
+  <thead>
+    <tr>
+      <th>Usuario de Origem</th>
+      <th>Usuario de Destino</th>
+      <th>Data</th>
+      <th>Hora</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transferasks.each do |transferask| %>
+      <tr>
+        <td class="auxiliares-transfer">Usuario de Origem</td>
+        <td><%= transferask.replyer.name %></td>
+        <td class="auxiliares-transfer">Usuario de Destino</td>
+        <td><%= transferask.asker.name %></td>
+        <td class="auxiliares-transfer">Data</td>
+        <td><%= transferask.created_at.day %>/<%= transferask.created_at.month %>/<%= transferask.created_at.year %></td>
+        <td class="auxiliares-transfer">Hora</td>
+        <td><%= transferask.created_at.hour %>:<%= transferask.created_at.min %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @transferasks, :previous_label => 'Anterior', :next_label => 'Próxima', :class => "paginacao-transfer-index" %>
+<br>
+<div class="ejs-footer">
+  <%= link_to 'Nova Transferencia', new_transfer_url, :class =>'submit-butao' %>
+</div>
+</div>

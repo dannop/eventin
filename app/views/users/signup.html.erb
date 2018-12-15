@@ -1,0 +1,48 @@
+<% provide(:title, "Cadastro | ")%>
+<% @div = true %>
+<video id="video-background" autoplay loop muted>
+  <source src="/assets/mej7.webm" type="video/webm">
+</video>
+<div class="box box-signup">
+    <div class="login login-signup">
+        <div class="logo-login"><img width="75" src="/assets/wolf.svg"></img></div>
+        <%= form_for(@user, local: true) do |form| %>
+        
+        <div class="two fields">
+          <div class="login-email">
+            <%= form.text_field :name, id: :@user_name,:class => "input", placeholder: "Nome"  %>
+          </div>
+          <div class="login-email">
+            <%= form.text_field :last_name, id: :@user_name,:class => "input", placeholder: "Sobrenome"  %>
+          </div>
+        </div>
+        
+      <div class="login-email">
+        <%= form.text_field :email, id: :@user_email,:class => "input", placeholder: "Email"  %>
+      </div>
+  
+      <div class="login-email">
+        <%= form.password_field :password,:class => "input", placeholder: "Senha"  %>
+      </div>
+    
+      <div class="login-email">
+        <%= form.password_field :password_confirmation,:class => "input", placeholder: "Confirmação de senha"  %>
+      </div>
+      
+      <div class="login-email">
+        <%= form.text_field :cpf, id: :user_cpf,:class => "input", placeholder: "CPF" %>
+      </div>
+      
+      <div class="login-email">
+          <%= form.label :Administrador %>
+          <%= form.check_box :adm, id: :user_adm %>
+      </div>
+      
+      <div class="but but-signup">
+          <%= form.submit "Cadastrar", class: :submit %>
+      </div>
+  <% end %>
+    </div>
+</div>
+  
+ 

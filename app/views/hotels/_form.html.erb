@@ -1,0 +1,42 @@
+<div class="form-padrao">
+<%= form_with(model: hotel, local: true) do |form| %>
+  <% if hotel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hotel.errors.count, "error") %> prohibited this hotel from being saved:</h2>
+
+      <ul>
+      <% hotel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="ui form">
+    <h1>Criar hotel</h1>
+    
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, id: :hotel_name %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :address %>
+      <%= form.text_field :address, id: :hotel_address %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_area :description, id: :hotel_description %>
+    </div>
+    
+    <div class="field">
+      <%= form.label "Foto" %>
+      <%= form.file_field :photo, id: :hotel_photo %>
+    </div>
+  
+    <div class="actions">
+      <%= form.submit "Criar hotel", :class => 'submit-butao' %>
+    </div>
+  </div>
+<% end %>
+</div>

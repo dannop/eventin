@@ -1,0 +1,42 @@
+<% provide(:title, "Arquivos | ")%>
+   <% if !flash[:notice].blank? %>
+      <div class = "alert alert-info">
+      <%= flash[:notice] %>
+      </div>
+   <% end %>
+   <h3 class="pageTitle">Material disponível para download</h3>
+<table class="ui striped table">
+   <thead>.
+      <tr>
+         <th>Nome</th>
+         <th>Atividade</th>
+         <th>Link do Download</th>
+         <th colspan="1"></th>
+         <th colspan="1"></th>
+      </tr>
+   </thead>
+   <tbody>
+      <% @archives.each do |archive| %>
+         <tr>
+            <td class="auxiliares-archives">Nome</td>
+            <td><%= archive.name %></td>
+            <td class="auxiliares-archives">Título</td>
+            <td>
+               <% if archive.lecture.present? %>
+                  <p> Palestra: <%= archive.lecture.title %> </p>
+               <% end %>
+               
+               <% if archive.workshop.present? %>
+                  <p> Workshop: <%= archive.workshop.title %> </p>
+               <% end %>
+            </td>
+            <td><%= link_to "Baixar", archive.attachment_url,:class => "btn-index-archives" %></td>
+            <td><%= button_to "Remover",  archive, method: :delete, confirm: "Voce tem certeza que deseja deletar #{archive.name}?",:class => "btn-index-archives" %></td>
+         </tr>
+         
+      <% end %>
+   </tbody>
+</table>
+<div class="staff-but">
+   <%= link_to "Fazer upload de um novo arquivo", new_archive_path,:class => "submit-butao" %>
+</div>

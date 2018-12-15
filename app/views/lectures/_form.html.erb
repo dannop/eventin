@@ -1,0 +1,46 @@
+<div class="form-padrao">
+<%= form_with(model: lecture, local: true) do |form| %>
+  <% if lecture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lecture.errors.count, "error") %> prohibited this lecture from being saved:</h2>
+
+      <ul>
+      <% lecture.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="ui form">
+    <h1>Criar palestra</h1>
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title, id: :lecture_title %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :the_day %>
+      <%= form.datetime_select :the_day, id: :lecture_the_day %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :availability %>
+      <%= form.check_box :availability, id: :lecture_availability %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :vacancies %>
+      <%= form.number_field :vacancies, id: :lecture_vacancies %>
+    </div>
+    <div class="field">
+      <%= form.label "Selecione a categoria" %>
+      <%= form.select :category_id, @categorys.collect { |category| [category.kind, category.id] }, 
+        {include_blank: "Nenhuma"} %>
+    </div>
+    
+    <div class="actions">
+      <%= form.submit "Criar palestra", :class => 'submit-butao' %>
+    </div>
+  </div>
+<% end %>
+</div>

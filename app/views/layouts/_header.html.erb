@@ -1,0 +1,120 @@
+         <div class="nav">
+            <div class="nav-left">
+                <div id="logo" class="logo animated bounce">
+                    <%= link_to root_path do %>
+                        <img src="/assets/wolf.svg" width="35" alt="">
+                    <% end %>
+                </div>
+                <!-- <div id="event-name">
+                    <% if @event.present? %>
+                        <h2><%= link_to @event.name, events_path %></h2>
+                    <% end %> 
+                </div>-->
+            </div>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <div class="dropdown">
+                        <div onclick="myFunction()" >  <img class="drop"  src="/assets/gear.svg" width="25"></img></div>
+                        <div id="myDropdown" class="dropdown-content">
+                            <% if current_user.adm? %>
+                                <%= link_to control_panel_path do %>
+                                    <p class="painel-de-controle-header">Painel de Controle</p>
+                                <% end %>
+                            <% end %>
+                        </div>
+                    </div>
+                    <script>
+                        function myFunction() {
+                            document.getElementById("myDropdown").classList.toggle("show");
+                        }
+                        window.onclick = function(event) {
+                          if (!event.target.matches('.drop')) {
+                        
+                            var dropdowns = document.getElementsByClassName("dropdown-content");
+                            var i;
+                            for (i = 0; i < dropdowns.length; i++) {
+                              var openDropdown = dropdowns[i];
+                              if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
+                              }
+                            }
+                          }
+                        }
+                    </script>
+                    <a> 
+                        <%= link_to logout_path, method: :delete do %>
+                            <span>Sair</span>
+                        <% end %>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="menuzin" class="menuzin active">
+            <ul>
+                <!--<% if @event.present? %>
+                    <span class="sobre-evento"><%= link_to @event.name, events_path %></span>
+                <% end %> -->
+                <li class="inicio">
+                    <%= link_to root_path do %>
+                        <img class="home" src="/assets/homezin.svg" width="19" alt="icone-home">
+                        <strong>Inicio</strong>
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to lectures_path do %>
+                        <img src="/assets/micro.svg" width="21" alt="">
+                        <strong>Palestras</strong>
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to workshops_path do %>
+                        <img src="/assets/workshop1.svg" width="21" alt="">
+                        <strong>Workshops</strong>
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to hotels_path do %>
+                        <img class="svg-icon" src="/assets/hotel.svg" width="21" alt="">
+                        <strong>Acomodações</strong>
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to new_checkout_path do %>
+                        <img class="svg-icon" src="/assets/payment.svg" width="21" alt="">
+                        <strong>Pagamento</strong>
+                    <% end %>
+                </li>
+                <li id="link">
+                    <%= link_to staffs_path do %>
+                        <img src="/assets/staff.svg" width="21" alt="">
+                        <strong>Staff</strong>
+                    <% end %>
+                </li>
+                <li id="evento">
+                    <%= link_to events_path do %>
+                        <img src="/assets/event.svg" width="21" alt="">
+                        <strong>Sobre o evento</strong>
+                    <% end %>
+                </li>
+                <li class="sair">
+                    <div class="usuario">
+                        <%= link_to user_path(current_user.id), :class => "user-link" do %>
+                            <% if @current_user.photo.present? %>
+                                <%= image_tag(@current_user.photo_url, :class => "user") %> 
+                            <% else %>
+                                <img class="user" src="/assets/default-user.png" alt="">
+                            <% end %>
+                            <% if @current_user %>
+                                <span><%= @current_user.name %> </span>
+                            <% end %>
+                            </br>
+                            <span class="ej-name"><%= @current_user.ej.name if @current_user.ej.present? %></span>
+                        <% end %>
+                        
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="menu" class="menu">
+            <div id="arrow-left" class="arrow-left"></div>
+        </div>

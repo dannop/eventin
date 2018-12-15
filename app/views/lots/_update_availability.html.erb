@@ -1,0 +1,5 @@
+<% if lot.purchasable %>
+  <%= link_to 'Tornar Inativo', update_availability_path(lot), method: :patch, :class => "btn-index-lots" %>
+<% else %>
+  <%= link_to 'Tornar Ativo', update_availability_path(lot), method: :patch, :class => "btn-index-lots" %>
+<% end %>

@@ -1,0 +1,78 @@
+<% provide(:title, " Hotel | ")%>
+<% @div = true %>
+<div class="cards" id="acomods">
+  <div class="cards-nav">
+    <input class="input" type="text" placeholder="Encontre hoteis,quartos,colegas de quarto ..">
+    <div class="busca-rapida">
+       <div class="links">
+           <a href="">3 camas</a>
+            <a href="">4 camas</a>
+            <a href="">5 camas</a>
+       </div>
+    </div>
+  </div>
+  <h1 class="card-title">Todos os quartos em hotel <strong class="laranja">'<%= @hotel.name %>'</strong></h1>
+<% @rooms.each do |room| %>
+<div class="card">
+    <div style="height:200px" class="card-foto">
+        <img src="/assets/room.jpg" alt="" height="201px">
+        <div class="card-data">
+            <span>Hotel: <%= @hotel.name %></span>
+            <span>Vagas: <%= room.users.count %>/<%= room.bed_one + room.bed_two*2 %></span>
+            <span>Solteiro: <%= room.bed_one %> </span>
+            <div class="divisor"></div>
+            <span>Casal: <%= room.bed_two %> </span>
+        </div>
+    </div>
+    <div class="card-info">
+        <div class="card-users">
+            <% room.users.each do |t| %>
+                <% if t.photo.present? %>
+                    <%= image_tag(t.photo_url, size: "50",class: "room-foto") %> 
+                <% else %>
+                    <img class="user" src="/assets/default-user.png" alt="">
+                <% end %>
+            <% end %>
+        </div>
+        <% if room.users.find_by(id: current_user.id)%>
+            <%= link_to 'Cancelar', room_inscription_path(room.id), method: :patch, id: "inscription",:class => "btn-insc"%>
+        <% else %>
+            <% if current_user.payment_status? %>
+                <% if @event.room_begin_day < DateTime.now %>
+                    <% if room.vacancies > 0 %>
+                        <%= link_to 'Registra-se', room_inscription_path(room.id), method: :patch, id: "inscription",:class => "btn-insc"%>
+                    <% else %>
+                        Vaga indisponível
+                    <% end %>
+                <% else %>
+                    Fora do tempo de registro
+                <% end %>
+            <% else %>
+                Pagamento pendente 
+            <% end %>
+        <% end %>
+    </div>
+</div>
+<% end %>
+<h1><%= will_paginate @rooms%></h1>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

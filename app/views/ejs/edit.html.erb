@@ -1,0 +1,15 @@
+
+<!--classe do show da ejs-->
+<div class="titulo-show">
+  <h3>Editar</h3>
+</div>
+
+<%= render 'form', ej: @ej %>
+
+<br>
+
+<div class="container-btn-ejs-show">
+      <%= link_to 'Show', @ej,:class=> "btn-ej-show" %>
+      <%= link_to 'Voltar', ejs_path,:class=> "btn-ej-show" %>
+  </div>
+

@@ -1,0 +1,39 @@
+<div class="card-pagamento">
+    <div class="card-vantagens">
+        <div class="card-vantagem">
+            <img width="20" src="/assets/ok.svg"></img>
+            <span>Parcele em até 4x sem juros.</span>
+        </div>
+        <div class="card-vantagem">
+            <img width="20" src="/assets/ok.svg"></img>
+            <span>Parcele em até 4x sem juros.</span>
+        </div>
+        <div class="card-vantagem">
+            <img width="20" src="/assets/ok.svg"></img>
+            <span>Parcele em até 4x sem juros.</span>
+        </div>
+    </div>
+    <div class="card-pagar">
+        <div class="card-hosp">
+            <div class="info">
+                <h3>S/ hospedagem</h3>
+                <h1>R$220</h1>  
+                    <input alt="Pague com PagSeguro" name="submit"  type="image"  
+                src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/120x53-pagar.gif"/>  
+                         
+            </div>
+        </div>
+        <div class="card-hosp no-hosp">
+            <div class="info">
+                <h3>C/ hospedagem</h3>
+                <h1>R$360</h1>
+                <%= link_to new_checkout_path do %>
+                    <input alt="Pague com PagSeguro" name="submit"  type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/120x53-pagar.gif"/>  
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <img src="/assets/payments.png"></img>
+    </div>
+</div>

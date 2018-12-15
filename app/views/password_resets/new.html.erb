@@ -1,0 +1,24 @@
+<% provide(:title, "Nova senha | ")%>
+<% @div = true %>
+<video id="video-background" autoplay loop muted>
+  <source src="/assets/mej7.webm" type="video/webm">
+</video>
+<div class="box">
+  <div class="login">
+    <div class="logo-login"><img width="75" src="/assets/wolf.svg"></img></div>
+    <h2 class="password-title">Recupere sua senha</h2>
+     <%= form_tag password_resets_path, :method => :post do %>
+    <div class="login-email input-passreset">
+        <%= text_field_tag :email, params[:email], :class => "input", placeholder: "Email.." %>
+    </div>
+    <div class="but but-signup"><%= submit_tag "Reset Password",:class => "submit" %></div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :event_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :begin_day %>
+    <%= form.datetime_select :begin_day, id: :event_begin_day %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :end_day %>
+    <%= form.datetime_select :end_day, id: :event_end_day %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :activity_begin_day %>
+    <%= form.datetime_select :activity_begin_day, id: :event_activity_begin_day %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :activity_end_day %>
+    <%= form.datetime_select :activity_end_day, id: :event_activity_end_day %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :room_begin_day %>
+    <%= form.datetime_select :room_begin_day, id: :event_room_begin_day %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :room_end_day %>
+    <%= form.datetime_select :room_end_day, id: :event_room_end_day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :event_description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  calendar: 2017-09-29
+  description: MyText
+
+two:
+  name: MyString
+  calendar: 2017-09-29
+  description: MyText

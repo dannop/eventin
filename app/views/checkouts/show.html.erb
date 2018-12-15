@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ticket:</strong>
+  <%= @checkout.ticket_id %>
+</p>
+
+<p>
+  <strong>Lot:</strong>
+  <%= @checkout.lot_id %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @checkout.price %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @checkout.status %>
+</p>
+
+<p>
+  <strong>Buyer name:</strong>
+  <%= @checkout.buyer_name %>
+</p>
+
+<p>
+  <strong>Reference:</strong>
+  <%= @checkout.reference %>
+</p>
+
+<%= link_to 'Edit', edit_checkout_path(@checkout) %> |
+<%= link_to 'Back', checkouts_path %>

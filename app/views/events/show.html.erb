@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Data de Inicio:</strong>
+  <%= @event.begin_day %>
+</p>
+
+<p>
+  <strong>Data de Fim:</strong>
+  <%= @event.end_day %>
+</p>
+
+<p>
+  <strong>Inicio dos eventos:</strong>
+  <%= @event.activity_begin_day %>
+</p>
+
+<p>
+  <strong>Fim dos eventos:</strong>
+  <%= @event.activity_end_day %>
+</p>
+
+<p>
+  <strong>Inicio dos quartos:</strong>
+  <%= @event.room_begin_day %>
+</p>
+
+<p>
+  <strong>Fim dos quartos:</strong>
+  <%= @event.room_end_day %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

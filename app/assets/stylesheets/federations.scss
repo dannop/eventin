@@ -1,0 +1,395 @@
+
+.federations {
+    margin:auto;
+    display:block;
+    padding-top:100px;
+     
+}
+
+// -------------- federações index ------------------
+
+thead{
+    text-align:center;
+}
+
+tbody{
+    text-align:center;
+}
+
+.btn-index-fed{
+    display:block;
+    width:100px;
+    height:30px;
+    background:#eb4444;
+    color:#fff;
+    line-height:30px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.btn-index-fed:hover{
+    background:red;
+    transition:0.2s;
+}
+
+.auxiliares-fed{
+    display:none;
+}
+
+.paginacao-fed-index{
+    text-transform:uppercase;
+    text-align:center;
+    margin-top:20px;
+    color:#000;
+}
+
+//responsividade da página index
+@media only screen and (min-width:320px) and (max-width:767px){
+    .btn-index-fed{
+        margin:0 auto;
+    }
+    
+    .auxiliares-fed{
+        display:block;
+        font-weight:bold;
+        font-size:1.225em;
+    }
+    
+}
+
+
+// ---------------------form federação-------------------------
+
+.btn-form-fed{
+    display:block;
+    width:125px;
+    height:30px;
+    background:#eb4444;
+    color:#fff;
+    line-height:30px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.2s;
+    margin:0 auto;
+    border:none;
+    
+}
+
+.btn-form-fed:hover{
+    background:red;
+    transition:0.2s;
+}
+
+//--------------------- Federações - show ----------------------
+
+.clear{
+    clear:both;
+}
+
+.titulo-show-fed{
+    width:400px;
+    height:80px;
+    border:3.5px solid #eb4444;
+    margin:0 auto;
+    margin-top:60px;
+}
+
+.titulo-show-fed h3{
+    text-align:center;
+    font-weight:bold;
+    font-size:1.8em;
+    color:#eb4444;
+    text-transform:uppercase;
+    line-height:15px;
+}
+
+.principal-fed-show{
+    width:700px;
+    height:350px;
+    margin:40px auto;
+    background:#fff;
+    border:2px solid #000;
+    border-radius:5px;
+    display:block;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.titulo-fed-show{
+    text-align:center;
+    text-transform:uppercase;
+    
+}
+
+.container-foto-fed-show{
+    width:200px;
+    height:200px;
+    float:left;
+    border-radius:5px;
+    margin-left:30px;
+    margin-top:20px;
+    background:#fff;
+}
+
+.foto-fed-show{
+    display:inline;
+    width:200px;
+    height:200px;
+    float:left;
+    border:1px solid #000;
+    border-radius:5px;
+}
+
+.fed-show{
+    display:block;
+    width:100%;
+    height:40px;
+    background:gray;
+    margin-top:45px;
+}
+
+.nomes-fed{
+    display:inline;
+    float:left;
+    width:300px;
+    height:80px;
+    margin-top:20px;
+    margin-left:80px;
+    background:#fff;
+    
+}
+
+.nome-fed-show{
+    text-align: center;
+    line-height:40px;
+    text-transform:uppercase;
+    font-size:1.5em;
+    font-family:Arial;
+    color:#fff;
+    font-weight:bold;
+    text-align:center;
+}
+
+.nomes-show-fed{
+    text-align: center;
+    text-transform:uppercase;
+    font-size:1em;
+    font-family:Arial;
+    color:#000;
+    font-weight:bold;
+    background:#fff;
+}
+
+.imagens-fed-show{
+    width:180px;
+    height:40px;
+    float:right;
+    background:#fff;
+    display:table;
+    background:#fff;
+    margin-top:20px;
+}
+
+.foto-selo-fed{
+    width:80px;
+    float:left;
+    margin-right:40px;
+    display:inline;
+}
+
+.container-btn-fed-show{
+    margin:30px auto;
+    width:250px;
+    height:90px;
+    background:#f4f4f4;
+    
+}
+
+.btn-fed-show{
+    display:block;
+    width:120px;
+    height:30px;
+    background:#eb4444;
+    color:#fff;
+    border-radius:5px;
+    text-align:center;
+    margin:10px auto;
+    line-height:30px;
+    text-transform:uppercase;
+    
+}
+
+.btn-fed-show:hover{
+    transition:0.4s;
+    background:red;
+    color:#fff;
+}
+
+
+// Menu Click
+.container-fed-painel{
+    display:block;
+    width:300px;
+    margin:30px auto;
+    
+}
+
+#btn-menu-fed {
+    display:block;
+    width:100%;
+    background-color: #eb4444;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom:10px;
+    color:#fff;
+    text-align:center;
+}
+
+#container-click-fed {
+  display: block;
+}
+
+
+//carrossel
+
+//AS CLASSES E IDS UTILIZADAS NO SLIDER ESTÃO NO EJS.SCSS (sessão show/carrossel)
+//POIS O SLIDER DA FEDERAÇÃO E DA EJ SÃO IGUAIS E UTILIZAM MESMAS CLASSES.
+
+
+.foto-carrossel-fed-show{
+    width:290px;
+    margin-left:5px;
+    margin-top:50px;
+    margin-bottom:5px;
+    border-radius:5px;
+}
+
+.nome-ej-fed-show{
+    display:block;
+    width:100%;
+    height:40px;
+    margin:0 auto;
+    background:blue;
+    font-size:1em;
+    color:#fff;
+    line-height:40px;
+    text-align:center;
+    
+}
+
+.nome-ej-fed{
+    font-size:1.5em;
+    color:#fff;
+    line-height:40px;
+}
+
+
+// ---------- responsivo da página show -----------------------
+
+@media only screen and (min-width:320px) and (max-width:767px){
+    .titulo-show-fed{
+        width:300px;
+        height:60px;
+        border:4px solid #eb4444;
+        margin-top:75px;
+    }
+
+    .titulo-show-fed h3{
+        font-size:1.5em;
+    }
+    
+    .principal-fed-show{
+        width:300px;
+        height:500px;
+    }
+    
+    .titulo-fed-show{
+        font-size:1.225em;
+    }
+    
+    .container-foto-fed-show{
+        float:none;
+        display:block;
+        margin:0 auto;
+    }
+
+    .foto-fed-show{
+        display:block;
+        float:none;
+    }
+    
+    .fed-show{
+        margin-top:5px;
+    }
+    
+    .nome-fed-show{
+        margin-top:5px;
+    }
+    
+    .nomes-fed{
+        display:block;
+        float:none;
+        width:295px;
+        margin:0 auto;
+        
+    }
+
+    .imagens-fed-show{
+        width:100px;
+        float:none;
+        margin:0 auto;
+    }
+    
+    .foto-selo-fed{
+        float:none;
+        display:block;
+        margin:0 auto;
+    }
+    
+    
+    
+    
+}
+
+//--------------------- Federações - new ----------------------
+
+.tudo{
+    width:400px;
+    height:400px;
+    margin: 0 auto;
+    margin-top:120px;
+    display:block;
+    background:#f4f4f4;
+}
+.federations {
+    margin:auto;
+    display:block;
+    padding-top:100px;
+     
+}
+
+
+
+
+// ---------------------form federação-------------------------
+
+.btn-form-fed{
+    display:block;
+    width:125px;
+    height:30px;
+    background:#eb4444;
+    color:#fff;
+    line-height:30px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.2s;
+    margin:0 auto;
+    border:none;
+    
+}
+
+.btn-form-fed:hover{
+    background:red;
+    transition:0.2s;
+}

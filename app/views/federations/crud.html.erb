@@ -1,0 +1,36 @@
+<div class="acomods" id="acomods">
+<div class="federations">
+<table class="ui striped table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Estado</th>
+      <th>Membros</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <div class="pesquisar">
+    <%= form_tag(federations_path, method: :get) do %>
+    <%= text_field_tag :term, params[:term] %>
+    <%= submit_tag 'Pesquisar', name: nil %>
+    <% end %>
+  </div>
+  <tbody>
+    <% @federations.each do |federation| %>
+      <tr>
+        <td><%= federation.name %></td>
+        <td><%= federation.state %></td>
+        <td><%= federation.members %></td>
+        <td><%= link_to 'Show', federation %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @federations%>
+<br>
+<div class="federations-footer">
+<%= link_to 'New Federation', new_federation_path %>
+</div>
+</div>
+</div>

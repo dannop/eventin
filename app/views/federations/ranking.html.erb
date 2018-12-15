@@ -1,0 +1,30 @@
+<% provide(:title, "Ranking | Federações | ")%>
+<div class="ranking center">
+                    <div class="ejs auto">
+                        <%= link_to ranking_federation_path do %>
+                            <div class="ejs-title">
+                                <h2>TOP 5: Federação</h2>
+                            </div>
+                        <% end %>
+                        <% n = 1 %>
+                        <% @federations.order(members: :desc).each do |federation| %>
+                            <%= link_to federation_path(federation.id) do %>
+                                <div class="ej">
+                                    <span><%= n %> º</span>
+                                    <div class="ej-logo">
+                                        <%= image_tag(federation.icon) %>
+                                    </div>
+                                        
+                                    <div class="ej-name">
+                                        <%= federation.name %>
+                                    </div>
+                                        
+                                    <div class="ej-info">
+                                        <%= federation.members %>/34 Pagantes
+                                    </div>
+                                </div>
+                                <% n = n + 1 %>
+                            <% end %>
+                        <% end %>
+                    </div>
+</div>

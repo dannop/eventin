@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %>Event IN</title>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/table.min.css"></link>
+    <link href="/assets/form.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  </head>
+
+  <body>
+    <style>
+      @font-face {
+      font-family: 'Avenir Demi';
+      src: url('/assets/AvenirDemi.woff2') format('woff2');
+      }
+      @font-face {
+      font-family: 'Avenir Thin';
+      src: url('/assets/AvenirThin.woff2') format('woff2');
+      }
+      @font-face {
+      font-family: 'Avenir Medium';
+      src: url('/assets/AvenirRegular.woff2') format('woff2');
+      }
+    </style>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><span><%= message %></span></div>
+    <% end %>
+    <% if logged_in?%>
+      <%= render 'layouts/header' %>
+    <% end %>
+    <% if !@div %>
+      <div class="content" id="acomods">
+    <% end %>
+        
+    <%= yield %>
+      
+    <% if !@div %> 
+      </div> 
+    <% end %>
+    
+    <script>
+       var links = document.querySelectorAll(".a strong");
+       links.onclick = function() {
+         console.log(links);
+         links.classList.add("link");
+       }
+    </script>
+    <script>
+            var menu = document.getElementById("menu");
+            var menuzin = document.getElementById("menuzin");
+            var conteudo = document.getElementById("acomods");
+            var arrow = document.getElementById("arrow-left");
+            menu.onclick = function() {
+                if(menuzin.classList.contains("active")) {
+                    menuzin.classList.remove("active");
+                    menuzin.className += " active-not";
+                    conteudo.classList.add("minimizar");
+                    conteudo.classList.add("full-width");
+                    arrow.classList.add("arrow-right");
+                    menu.classList.add("zeroleft");
+                }
+                else {
+                    conteudo.classList.remove("minimizar");
+                    conteudo.classList.remove("full-width");
+                    menu.classList.remove("zeroleft");
+                    arrow.classList.remove("arrow-right");
+                    menuzin.classList.remove("active-not");
+                    menuzin.classList.add("active");
+                }
+            }
+        </script>
+        <script>
+            function openCity(evt, cityName) {
+                // Declare all variables
+                var i, tabcontent, tablinks;
+
+                // Get all elements with class="tabcontent" and hide them
+                tabcontent = document.getElementsByClassName("colunas");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                // Get all elements with class="tablinks" and remove the class "active"
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+
+                // Show the current tab, and add an "active" class to the button that opened the tab
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+                }
+        </script>
+        
+      <script>
+        var exit = document.getElementById('exit');
+        var countdown = document.getElementById('countdown');
+        exit.onclick = function() {
+          countdown.classList.add('display-none');
+        }
+      </script>
+      <script>
+        var exit2 = document.getElementById('exit2');
+        var countdown2 = document.getElementById('countdown2');
+        exit2.onclick = function() {
+          countdown2.classList.add('display-none');
+        }
+      </script>
+      <div id="drift-widget-container" data-turbolinks-permanent></div><br>
+      
+      <div class="clear"></div>
+      
+      <footer class="footer">
+          <div class="tudo-footer">
+              <p>Acesse Nossas Redes Sociais</p>
+              <div class="redes-sociais-footer">
+                  <a href="https://www.facebook.com/injunioruff/">  <img src="/assets/fb_icone.png" width="50" height="50"></img>  </a>
+                  <a href="https://www.instagram.com/injunioruff/?hl=pt-br">  <img src="/assets/instagram_icone.png" width="50" height="50"></img>  </a>
+                  <a href="https://injunior.com.br/">  <img src="/assets/site_icone.png" width="50" height="50"></img>  </a>
+              </div>
+              <p>desenvolvido com&nbsp; <img src="/assets/coracao_icone.png" width="15" height="15"></img>&nbsp;pela in junior</p>
+              <p><img src="/assets/Copyright_icone.png" width="18" height="15"></img> &nbsp;Todos os direitos reservados</p>
+          </div>
+      </footer>
+        
+        
+      
+      
+  </body>
+</html>

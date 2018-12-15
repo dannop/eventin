@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @lot.price %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @lot.event %>
+</p>
+
+<%= link_to 'Edit', edit_lot_path(@lot) %> |
+<%= link_to 'Back', lots_path %>

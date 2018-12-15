@@ -1,0 +1,45 @@
+<%= form_for( @room, url: room_from_controller_path, method: :post) do |form| %>
+    <% if @room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+      <ul>
+      <% @room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="ui form">
+      <div class="field">
+        <%= form.label "Selecione a acomodação" %>
+        <%= form.select :hotel_id, @hotels.collect { |hotel| [hotel.name, hotel.id] }, 
+        {include_blank: "Nenhuma"} %>
+      </div>
+      
+      <div class="field">
+        <%= form.label :"Número do Quarto" %>
+        <%= form.text_field :number, id: :room_number %>
+      </div>
+      
+      <div class="field">
+        <%= form.label :"Camas de Solteiro"%>
+        <%= form.number_field :bed_one, id: :room_bed_one %>
+      </div>
+      
+      <div class="field">
+        <%= form.label :"Camas de Casal"%>
+        <%= form.number_field :bed_two, id: :room_bed_two %>
+      </div>
+      
+      <div class="field">
+        <%= form.label :Foto %>
+        <%= form.file_field :photo, id: :room_photo %>
+      </div>
+      
+      <div class="actions-control-painel">
+        <%= form.submit "Criar", :class => 'submit-butao' %>
+      </div>
+      
+    </div>
+  <% end %>

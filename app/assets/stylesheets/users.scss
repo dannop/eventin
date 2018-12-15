@@ -1,0 +1,607 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//----------------- Index/users -------------------------
+.auxiliares-user{
+    display:none;
+}
+
+.paginacao-users-index{
+    text-transform:uppercase;
+    text-align:center;
+    margin-top:20px;
+    margin-bottom:20px;
+    color:#000;
+}
+
+//btn-index-users está localizada na sessão index do ejs.scss e também é usado naquela página.
+
+//responsividade da página index
+@media only screen and (min-width:320px) and (max-width:767px){
+    .btn-index-users{
+        margin:0 auto;
+    }
+    
+    .auxiliares-ejs{
+        display:block;
+        font-weight:bold;
+        font-size:1.225em;
+    }
+    
+}
+
+//---------------------------------------------------------------
+.reset-title {
+    width:400px;
+    text-align:left;
+}
+.reset-title h1 {
+    text-align:left;
+}
+.password-reset {
+    background:white;
+    height:100%;
+}
+.session {
+    background:white;
+    padding-bottom:50px;
+}
+.logo-session {
+    height:50px;
+    width:100%;
+    border-bottom:1px solid #dedede;
+}
+.logo-session img {
+    width:35px;
+    margin:auto;
+    display:block;
+    position:relative;
+    top:5px;
+}
+.users {
+    margin:auto;
+    display:block;
+    padding-top:100px;
+}
+.user-image {
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    position: relative;
+    overflow: hidden;
+}
+.foto-user-index {
+  width:80px;
+  height:80px;
+  object-fit:cover;
+  
+}
+.users-footer {
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    align-items:center;
+    margin-top:40px;
+    
+}
+.busca-users {
+    margin:auto;
+    display:block;
+    margin-bottom:20px;
+}
+.busca-users form {
+    display:flex;
+    justify-content:center;
+}
+.busca-users input {
+    max-width:200px;
+    width:100%;
+    background:#dedede;
+    border:none;
+    height:40px;
+    margin-left:20px;
+    border-radius:4px;
+    float:left;
+    color:#a0a0a0
+}
+.busca-users .busca-submit {
+    max-width:100px;
+    float:left;
+    color:#999494
+}
+.busca-users .busca-input {
+    padding:0px 10px;
+    margin:0;
+    color:#a0a0a0
+}
+.pagination a, .pagination .current,.pagination .previous_page  {
+    background:#dedede;
+    padding:2px 4px;
+    border-radius:4px;
+    color:#999494
+}
+.photo {
+    padding-top:30px !important;
+}
+.image-upload {
+    margin-top:60px;
+    margin-bottom:100px;
+}
+.image-upload label {
+    padding:60px;
+    border:2px dashed #dedede;
+    border-radius:4px;
+    cursor:pointer;
+}
+.image-upload label img {
+    position:relative;
+    top:25px;
+}
+
+//-------------------  Show da sessão Users -------------------
+
+.titulo-users{
+    display:block;
+    margin:0 auto;
+    text-align:center;
+    border:3.5px solid #eb4444;
+    width:280px;
+    height:60px;
+    line-height:50px;
+    margin-bottom:20px;
+    color:#eb4444;
+    font-size:1.7em;
+}
+
+.container-principal-users{
+    width:1050px;
+    margin:auto;
+    height:400px;
+    background:#fff;
+    border:1px solid blue;
+    box-shadow: 10px 10px 5px #888888;
+    display:table;
+}
+
+.container-foto-users{
+    display:block;
+    margin-top:10px;
+    margin-left:10px;
+    width:300px;
+    height:300px;
+    background:#2B7FFF;
+    float:left;
+}
+
+.user-picture{
+    display:block;
+    width:290px;
+    height:290px;
+    margin:5px auto;
+}
+
+.nome-users{
+    width:400px;
+    height:60px;
+    background:#2B7FFF;
+    margin-top:10px;
+    margin-left:310px;
+    text-align:center;
+    font-size:2em;
+    line-height:50px;
+    color:#fff;
+}
+
+.dados-titulo-users{
+    font-size:1.225em;
+    margin-left:30px;
+    display:inline-block;
+    width:120px;
+}
+
+.container-info-users{
+    width:65%;
+    height:240px;
+    background:#222;
+    margin-left:340px;
+    display:block;
+    border:3px solid #bbb;
+    border-radius:5px;
+    margin-right:20px;
+}
+
+.container-parte-1{
+    width:20%;
+    height:230px;
+    background:#222;
+    display:table-cell;
+}
+
+.bloco-itens-users{
+    display:inline-block;
+    width:100%;
+    height:40px;
+    background:#222;
+    margin-bottom:15px;
+    margin-top:2px;
+}
+
+.nomes-info{
+    display:block;
+    width:95%;
+    margin:0 auto;
+    height:30px;
+    text-align:center;
+    background:#222;
+    color:#fff;
+}
+
+
+.info-users{
+    border:1px solid #fff;
+    display:block;
+    background:#fff;
+    padding:5px 10px;
+    border-radius:5px;
+    text-align:center;
+    width:95%;
+    height:30px;
+    margin:0 auto;
+}
+
+.container-pagamento-acomodacao-users{
+    width:500px;
+    height:420px;
+    background:#f4f4f4;
+    float:left;
+}
+
+.container-pag{
+    width:100%;
+    height:200px;
+    background:#fff;
+    border:1px solid blue;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.container-pag h4{
+    text-align:center;
+    color:blue;
+    text-transform:uppercase;
+}
+
+.container-acomod{
+    width:100%;
+    height:200px;
+    background:#fff;
+    margin-top:20px;
+    border:1px solid blue;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.container-acomod h4{
+    text-align:center;
+    color:blue;
+    text-transform:uppercase;
+}
+
+.container-palestras-users{
+    width:530px;
+    margin-left:20px;
+    height:420px;
+    background:#fff;
+    float:left;
+    border:1px solid blue;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.container-palestras-users h4{
+    text-align:center;
+    color:blue;
+    text-transform:uppercase;
+}
+.user-image {
+    margin:auto;
+    display:block;
+}
+
+.parte-2{
+    display:block;
+    width:1050px;
+    height:500px;
+    background:#f4f4f4;
+    margin:20px auto;
+}
+
+.botoes-show-user{
+    display:block;
+    width:340px;
+    height:30px;
+    margin:0 auto;
+    background:#f4f4f4;
+}
+
+.btn-show-user{
+    display:inline-block;
+    width:100px;
+    height:30px;
+    background:#eb4444;
+    color:#fff;
+    line-height:30px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.2s;
+    margin-left:5px;
+    margin-right:5px;
+    text-align:center;
+}
+
+.btn-show-user:hover{
+    background:red;
+    transition:0.2s;
+}
+
+// Responsividade da página Show/users
+
+@media only screen and (min-width:320px) and (max-width:767px){
+    .titulo-users{
+        display:block;
+        margin:30px auto;
+        width:90%;
+    }
+    
+    .container-principal-users{
+        width:95%;
+        height:1100px;
+        margin:20px auto;
+        display:block;
+    }
+    
+    .container-foto-users{
+        display:block;
+        margin:10px auto;
+        width:95%;
+        height:300px;
+        float:none;
+        margin-bottom:0px;
+    }
+    
+    .user-picture{
+        display:block;
+        width:94%;
+        height:290px;
+        margin:0 auto;
+        padding-top:10px;
+    }
+    
+    .nome-users{
+        width:95%;
+        margin:0 auto;
+    }
+    
+    .dados-titulo-users{
+        display:block;
+        width:100%;
+        margin:10px auto;
+        text-align:center;
+    }
+    
+    .container-info-users{
+        width:95%;
+        height:650px;
+        display:block;
+        margin:0 auto;
+    }
+    
+    .container-parte-1{
+        display:block;
+        width:95%;
+        height:300px;
+        margin:0 auto;
+        text-align:center;
+    }
+    
+    
+    .nomes-info{
+        display:block;
+        width:95%;
+        height:30px;
+        text-align:center;
+        margin:0 auto;
+    }
+    
+    
+    .info-users{
+        display:block;
+        text-align:center;
+        width:95%;
+        height:30px;
+        margin:0 auto;
+    }
+    
+    .parte-2{
+        display:block;
+        width:95%;
+        height:1150px;
+        background:#f4f4f4;
+        margin:20px auto;
+    }
+    
+    .container-pagamento-acomodacao-users{
+        display:block;
+        width:100%;
+        height:640px;
+        margin:0 auto;
+        background:#f4f4f4;
+        float:none;
+    }
+    
+    .container-pag{
+        height:300px;
+        
+    }
+    
+    .container-acomod{
+        height:300px;
+    }
+    
+    .container-palestras-users{
+        width:100%;
+        margin:0 auto;
+        height:500px;
+        background:#fff;
+        float:none;
+    }
+    
+    .botoes-show-user{
+        display:block;
+        width:280px;
+        height:30px;
+        margin:0 auto;
+        background:#f4f4f4;
+    }
+    
+    .btn-show-user{
+        width:80px;
+        text-align:center;
+    }
+    
+}
+
+@media only screen and (min-width:768px) and (max-width:1100px){
+
+    .container-principal-users{
+        width:95%;
+        margin: 0 auto;
+        height:450px;
+        display:block;
+    }
+    
+    .container-foto-users{
+        width:250px;
+        height:250px;
+        float:left;
+    }
+    
+    .user-picture{
+        display:block;
+        width:240px;
+        height:240px;
+        margin:5px auto;
+    }
+    
+    .nome-users{
+        width:320px;
+        margin-left:240px;
+        text-align:center;
+        font-size:2em;
+        line-height:50px;
+        color:#fff;
+    }
+    
+    .container-info-users{
+        width:62%;
+        height:300px;
+        background:#222;
+        margin-left:270px;
+        display:block;
+        border:3px solid #bbb;
+        border-radius:5px;
+        margin-right:20px;
+    }
+    
+    .container-parte-1{
+        width:30%;
+        height:270px;
+        background:#222;
+        display:table-cell;
+    }
+    
+    .nomes-info{
+        display:block;
+        width:95%;
+        height:30px;
+        margin:0 auto;
+        text-align:center;
+        background:#222;
+        color:#fff;
+    }
+    
+    .info-users{
+        display:block;
+        text-align:center;
+        width:95%;
+        height:30px;
+        margin:0 auto;
+    }
+    
+    .parte-2{
+        display:block;
+        width:95%;
+        height:450px;
+        background:#f4f4f4;
+        margin:20px auto;
+    }
+    
+    .container-pagamento-acomodacao-users{
+        width:37%;
+        height:420px;
+        background:#f4f4f4;
+        float:left;
+    }
+    
+
+    
+    .container-palestras-users{
+        width:60%;
+        margin-left:20px;
+        height:420px;
+        background:#fff;
+        float:right;
+        border:1px solid blue;
+        box-shadow: 10px 10px 5px #888888;
+    }
+    
+
+    
+}
+
+// ---------------------form user-------------------------
+
+.btn-form-user{
+    display:block;
+    width:125px;
+    height:30px;
+    background:#eb4444;
+    color:#fff;
+    line-height:30px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.2s;
+    margin:0 auto;
+    border:none;
+    
+}
+
+.btn-form-user:hover{
+    background:red;
+    transition:0.2s;
+}
+
+.titulo-form-user{
+    width:400px;
+    height:80px;
+    border:3.5px solid #eb4444;
+    margin:0 auto;
+    margin-top:60px;
+}
+
+.titulo-form-user h3{
+    text-align:center;
+    font-weight:bold;
+    font-size:1.8em;
+    color:#eb4444;
+    text-transform:uppercase;
+    line-height:15px;
+}

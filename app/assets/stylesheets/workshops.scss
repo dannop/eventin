@@ -1,0 +1,894 @@
+// Place all the styles related to the Workshops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.clear{
+    clear:both;
+}
+
+// ----------------------- Página Index -----------------------
+
+//cabeçalho
+
+.container-principal{
+    width:100%;
+    background:#fff;
+    border:1px solid #dedede;
+    display:block;
+    
+}
+
+.container-pesquisa-workshop{
+    background:#fff;
+    width:60%;
+    height:70px;
+    border:1px solid #dedede;
+    float:left;
+    
+    
+}
+
+.container-btn-criar-workshop{
+    width:40%;
+    height:70px;
+    background:#fff;
+    display:inline-block;
+    float:left;
+}
+
+.fa-search{
+    margin-left:10px;
+    margin-top:10px;
+}
+
+//corpo da página
+
+.titulo-index-workshop{
+    margin-left:40px;
+    margin-top:40px;
+    margin-bottom:40px;
+}
+
+.bloco-workshop{
+    width:32%;
+    height:300px;
+    background:#f4f4f4;
+    display:inline-block;
+    margin-left:10px;
+    border:1px solid #dedede;
+    margin-bottom:30px;
+}
+
+.bloco-titulo{
+    width:100%;
+    height:200px;
+    position:relative;
+    background:#0066cc;
+    margin-top:-15px;
+    border:1px solid #dedede;
+}
+
+.titulo-workshop{
+    color: #fff;
+    text-align: center;
+    max-width: 300px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130px;
+    font-size:1.2em;
+}
+
+.titulo-workshop:hover{
+    text-decoration:underline;
+}
+
+.barra-informacoes{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    opacity: 0.8;
+}
+
+.divisor-workshop{
+    width: 100%;
+    border-bottom: 1px solid #dedede;
+    padding: 17px 0px;
+}
+
+.barra-informacoes span{
+    color: white;
+    font-size: 14px;
+    position: relative;
+    float: left;
+    width: 50%;
+    text-align: center;
+    padding: 8.5px 12px;
+    border-left: 1px solid #dedede;
+}
+
+.nomes-workshop{
+    text-align:center;
+}
+
+.btn-workshops-2{
+    width:100%;
+    display:block;
+    margin:10px auto;
+    background:#f4f4f4;
+}
+
+.info-workshop{
+    text-align:center;
+}
+
+.btn-workshops-1{
+    width:197px;
+    height:60px;
+    display:block;
+    margin:10px auto;
+    background:#f4f4f4;
+}
+
+#btn-membro-workshops{
+    display:block;
+    margin:15px auto;
+    width:100px;
+    height:30px;
+    color: #fff;
+    text-align:center;
+    line-height:25px;
+    background: #ed4343;
+    border-radius:5px;
+    transition:0.2s;
+    cursor:pointer;
+}
+
+#btn-membro-workshops:hover{
+    background-color: #E86565;
+    transition:0.2s;
+}
+
+#btn-workshop-index{
+    display:inline;
+    margin-right:5px;
+    margin-left:5px;
+    padding:6px 20px 4.5px 20px;
+    border:1px solid #ed4343;
+    text-align:center;
+    line-height:35px;
+    color:#ed4343;
+    transition:0.2s;
+    border-radius:50px;
+    font-size:11.7px;
+    text-transform:uppercase;
+}
+
+#btn-workshop-index:hover{
+    transition:0.4s;
+    background:#ed4343;
+    color:#fff;
+}
+
+.container-criar-workshop{
+    width:146px;
+    height:40px;
+    margin:20px auto;
+}
+
+.paginacao-workshops{
+    text-transform:uppercase;
+    text-align:center;
+    margin-top:20px;
+    color:#000;
+}
+
+//-------------- Responsividade da página Index ---------
+
+@media only screen and (min-width:320px) and (max-width:320px){
+    
+    .container-pesquisa-workshop{
+        width:300px;
+        display:block;
+        float:none;
+        margin: 0 auto;
+        margin-left:17px;
+    }
+    
+    .container-btn-criar-workshop{
+        width:320px;
+        display:block;
+        float:none;
+    }
+    
+    .fa-search{
+        margin:10px 130px;
+    }
+    
+    .titulo-index-workshop{
+        display:block;
+        width:90%;
+        margin:20px auto;
+        font-size:1.5em;
+        text-align:center;
+    }
+    
+    .bloco-workshop{
+        width:300px;
+        height:370px;
+        display:block;
+        margin:30px auto;
+    }
+    
+    .bloco-titulo{
+        width:100%;
+        height:280px;
+        position:relative;
+        background:#0066cc;
+        margin-top:-15px;
+        border:1px solid #dedede;
+    }
+    
+    .barra-informacoes{
+        height: 140px;
+    }
+    
+    .barra-informacoes span{
+        left:0;
+        text-align:center;
+        float: left;
+        display:block;
+        width:100%;
+        border: 1px solid #dedede;
+    }
+    
+    .btn-workshops-1{
+        height:30px;
+    }
+    
+}
+
+@media only screen and (min-width:321px) and (max-width:767px){
+    
+    .container-pesquisa-workshop{
+        width:100%;
+        display:block;
+        float:none;
+        margin: 0 auto;
+    }
+    
+    .container-btn-criar-workshop{
+        width:100%;
+        display:block;
+        float:none;
+    }
+    
+    .fa-search{
+        margin:10px 45%;
+    }
+    
+    .titulo-index-workshop{
+        display:block;
+        width:90%;
+        margin:20px auto;
+        text-align:center;
+    }
+    
+    .bloco-workshop{
+        width:95%;
+        height:380px;
+        display:block;
+        margin:30px auto;
+    }
+    
+    .bloco-titulo{
+        width:100%;
+        height:280px;
+        margin-top:-15px;
+    }
+    
+    .barra-informacoes{
+        height: 140px;
+    }
+    
+    .barra-informacoes span{
+        left:0;
+        text-align:center;
+        float: left;
+        display:block;
+        width:100%;
+        border: 1px solid #dedede;
+    
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:1150px){
+    .container-pesquisa-workshop{
+        width:80%;
+    }
+
+    .container-btn-criar-workshop{
+        width:20%;
+    }
+    
+    .bloco-workshop{
+        width:47%;
+        margin-bottom:40px;
+    }
+}
+
+//--------------------------------------------- página Ver Mais -----------
+
+.bloco-workshop-show{
+    width:70%;
+    height:800px;
+    background:#f4f4f4;
+    display:block;
+    margin:0 auto;
+    border:1px solid #dedede;
+    margin-top:40px;
+    margin-bottom:20px;
+}
+
+.bloco-titulo-show{
+    width:100%;
+    height:200px;
+    position:relative;
+    background:#0066cc;
+    margin-top:-15px;
+    border:1px solid #dedede;
+}
+
+.titulo-workshop-show{
+    color: white;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    top: 50px;
+    font-size:2em;
+}
+
+.barra-informacoes-show{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    background: black;
+    opacity: 0.8;
+    border:1px solid #dedede;
+}
+
+.barra-informacoes-show span{
+    color: white;
+    font-size: 14px;
+    position: relative;
+    left: 10px;
+    float: left;
+    border-right: 1px solid #dedede;
+    padding: 7px 12px;
+}
+
+.descricao-show{
+    display:block;
+    width:90%;
+    height:200px;
+    background:#f4f4f4;
+    margin:0 auto;
+    margin-top:30px;
+}
+
+.descricao-show h4{
+    text-align:center;
+    text-transform:uppercase;
+    font-weight:bold;
+}
+
+.descricao-show p{
+    text-align:center;
+}
+
+.membros-show{
+    display:block;
+    width:42.7%;
+    height:300px;
+    background:#f4f4f4;
+    margin-top:30px;
+    margin-left:45px;
+    float:left;
+}
+
+.adicionar-staff-workshop{
+    text-align:center;
+}
+
+.field-a{
+    padding-left:28%;
+    padding-right:28%;
+    padding-bottom:10px;
+}
+
+.clear{
+    clear:both;
+}
+
+.btn-show-1{
+    width:120px;
+    height:30px;
+    background:#eb4444;
+    display:inline-block;
+    text-align:center;
+    margin-right:15px;
+    margin-left:15px;
+    line-height:30px;
+    transition:0.2s;
+    border-radius:5px;
+}
+
+.btn-show-1:hover{
+    background:#ca2222;
+    transition:0.2s;
+}
+
+#detalhes{
+    color:#fff;
+    text-transform:uppercase;
+}
+
+.botoes-show-workshop{
+    display:table;
+    margin:10px auto;
+    width:300px;
+    height:40px;
+    background:#f4f4f4;
+}
+
+.container-adm-1{
+    display:block;
+    width:500px;
+    margin:0 auto;
+    background:none;
+}
+
+.btn-palestrante-workshop{
+    display:block;
+    width:181px;
+    height:40px;
+    background:none;
+    margin:10px auto;
+}
+
+.btn-adc-arquivo{
+    display:block;
+    width:75px;
+    height:40px;
+    background:none;
+    margin:10px auto;
+}
+
+.botoes-editar-workshop{
+    display:block;
+    margin:10px auto;
+    width:300px;
+    height:40px;
+    background:#f4f4f4;
+}
+
+#btn-editar-workshops{
+    display:block;
+    margin:10px auto;
+    width:100px;
+    height:30px;
+    color: #fff;
+    text-align:center;
+    line-height:30px;
+    background: #ed4343;
+    border-radius:5px;
+    transition:0.2s;
+    cursor:pointer;
+}
+
+#btn-editar-workshops:hover{
+    background-color: #E86565;
+    transition:0.2s;
+}
+
+// ------------ responsividade da página ver mais workshops ------------------
+
+@media only screen and (min-width:320px) and (max-width:767px){
+    .bloco-workshop-show{
+        width:95%;
+        height:1300px;
+        margin:0 auto;
+    }
+    
+    .bloco-titulo-show{
+        width:100%;
+        height:350px;
+        margin-top:-15px;
+    }
+    
+    .barra-informacoes-show{
+        height: 165px;
+    }
+    
+    .barra-informacoes-show span{
+        left:0;
+        text-align:center;
+        float: left;
+        display:block;
+        width:100%;
+        border: 1px solid #dedede;
+    }
+    
+    .descricao-show{
+        display:block;
+        width:295px;
+        height:200px;
+        background:#f4f4f4;
+        margin:0 auto;
+        margin-top:30px;
+    }
+    
+    .membros-show{
+        display:block;
+        width:295px;
+        height:300px;
+        margin:0 auto;
+        margin-top:30px;
+        float:none;
+    }
+    
+    .field-a{
+        padding-left:20%;
+        padding-right:20%;
+        padding-bottom:10px;
+    }
+    
+    .botoes-show-workshop{
+        width:295px;
+    }
+    
+    .btn-show-1{
+        width:115px;
+    }
+    
+    .container-adm-1{
+        width:95%;
+        
+    }
+    
+}
+
+@media only screen and (min-width:768px) and (max-width:1023px){
+    .bloco-workshop-show{
+        width:95%;
+        height:1300px;
+        margin:0 auto;
+    }
+    
+    .membros-show{
+        display:block;
+        width:40%;
+        height:300px;
+        margin-left:20px;
+        margin-right:20px;
+    }
+}
+
+// -------------------------------- páginas new/edit/form -----------------
+
+.titulo-form-workshop{
+    width:400px;
+    height:80px;
+    border:3.5px solid #ed4444;
+    margin:60px auto;
+    
+}
+
+.titulo-form-workshop h3{
+    text-align:center;
+    font-weight:bold;
+    font-size:1.8em;
+    color:#ed4444;
+    text-transform:uppercase;
+    line-height:20px;
+}
+
+.formulario{
+    display:block;
+    width:500px;
+    background:#f4f4f4;
+    margin:0 auto;
+}
+
+.back{
+    width:74px;
+    height:40px;
+    margin:10px auto;
+    background:#f4f4f4;
+}
+
+// responsividade da página edit e new
+
+@media only screen and (min-width:320px) and (max-width:510px){
+    .titulo-form-workshop{
+        width:90%;
+        height:80px;
+        border:3.5px solid #ed4444;
+        margin:60px auto;
+        
+    }
+    
+    .formulario{
+        display:block;
+        width:98%;
+        background:#f4f4f4;
+        margin:0 auto;
+    }
+}
+
+// -----------------------------------------countdown página workshop index
+
+
+/* google fonts */
+@import url('https://fonts.googleapis.com/css?family=Passion+One');
+
+.corpo-relogio-workshop{
+  width:95%;
+  height:310px;
+  background:#222;
+  border-radius:5px;
+  margin:20px  auto;
+  
+}
+
+.corpo-relogio-workshop p{
+    text-align:center;
+    color:#fff;
+    text-transform:uppercase;
+    letter-spacing: 4px;
+    font-size:1em;
+    font-weight:bold;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.li-countdown-workshop{
+	display: inline-block;
+	font-size: 24px;
+	width:24%;
+	letter-spacing: 4px; 
+	text-transform: uppercase;
+	font-family: 'Passion One', cursive;
+	margin: 1% auto;
+}
+
+
+#tempo-workshop{	
+	text-align: center;	
+	color: #F8F8FF;
+	width: 95%;
+	height:310px;
+	margin:0 auto;
+	
+}
+
+
+#dias-workshop, #horas-workshop, #minutos-workshop, #segundos-workshop{
+      font-size: 50px;
+      line-height:80px;
+      display:inline-block;
+      width:100px;
+      height:80px;
+      background:#fff;
+      border-radius:5px;
+      color:#222;
+}
+
+//Responsividade do countdown
+
+@media only screen and (min-width:320px) and (max-width:767px){
+    .li-countdown-workshop{
+    	display:inline-block;
+    	font-size: 20px;
+    	width:40%;
+    	height:100px;
+    }
+    
+    .li-countdown-workshop p{
+        display:block;
+        margin:0 auto;
+    }
+    
+    #dias-workshop, #horas-workshop, #minutos-workshop, #segundos-workshop{
+    font-size: 30px;
+    line-height:60px;
+    margin:0 auto;
+    display:block;
+    width:80px;
+    height:60px;
+    
+    }
+    
+    .corpo-relogio-workshop{
+      height:360px;
+    }
+    
+    #tempo-workshop{
+        height:360px;
+    }
+}
+
+//--------------------------------- carrossel show --------------------------
+#wrapper-ws{
+	width:300px;
+	margin:0 auto;
+	height:270px;
+	position:relative;
+	color:#fff;
+	text-shadow:rgba(0,0,0,0.1) 2px 2px 0px;
+	border-radius:5px;
+}
+
+#slider-wrap-ws{
+	width:300px;
+	height:270px;
+	position:relative;
+	overflow:hidden;
+	border-radius:5px;
+}
+
+#slider-wrap-ws ul#slider-ws{
+	width:100%;
+	height:100%;
+	
+	position:absolute;
+	top:0;
+	left:0;		
+}
+
+#slider-wrap-ws ul#slider-ws li{
+	float:left;
+	position:relative;
+	width:300px;
+	height:270px;
+	border-radius:5px;
+}
+
+/*btns*/
+.btns-ws{
+	position:absolute;
+	width:50px;
+	height:60px;
+	top:50%;
+	margin-top:-25px;
+	line-height:57px;
+	text-align:center;
+	cursor:pointer;	
+	background:rgba(0,0,0,0.1);
+	z-index:100;
+	
+	
+	-webkit-user-select: none;  
+	-moz-user-select: none; 
+	-khtml-user-select: none; 
+	-ms-user-select: none;
+	
+	-webkit-transition: all 0.1s ease;
+	-moz-transition: all 0.1s ease;
+	-o-transition: all 0.1s ease;
+	-ms-transition: all 0.1s ease;
+	transition: all 0.1s ease;
+}
+
+.btns-ws:hover{
+	background:rgba(0,0,0,0.3);	
+}
+
+#next{right:-50px; border-radius:7px 0px 0px 7px;}
+#previous{left:-50px; border-radius:0px 7px 7px 7px;}
+#counter{
+	top: 10px; 
+	right:135px; 
+	width:auto;
+	position:absolute;
+}
+
+#slider-wrap-ws.active #next{right:0px;}
+#slider-wrap-ws.active #previous{left:0px;}
+
+
+/*bar*/
+#pagination-wrap{
+	min-width:20px;
+	margin-top:400px;
+	margin-left: auto; 
+	margin-right: auto;
+	height:15px;
+	position:relative;
+	text-align:center;
+}
+
+#pagination-wrap ul {
+	width:100%;
+}
+
+#pagination-wrap ul li{
+	margin: 0 4px;
+	display: inline-block;
+	width:5px;
+	height:5px;
+	border-radius:50%;
+	background:#fff;
+	opacity:0.5;
+	position:relative;
+  top:0;
+  
+  
+}
+
+#pagination-wrap ul li.active{
+  width:12px;
+  height:12px;
+  top:3px;
+	opacity:1;
+	box-shadow:rgba(0,0,0,0.1) 1px 1px 0px;	
+}
+
+/*ANIMATION*/
+#slider-wrap-ws ul, #pagination-wrap ul li{
+	-webkit-transition: all 0.3s cubic-bezier(1,.01,.32,1);
+	-moz-transition: all 0.3s cubic-bezier(1,.01,.32,1);
+	-o-transition: all 0.3s cubic-bezier(1,.01,.32,1);
+	-ms-transition: all 0.3s cubic-bezier(1,.01,.32,1);
+	transition: all 0.3s cubic-bezier(1,.01,.32,1);	
+}
+
+.btn-remover{
+    display:block;
+    width:80px;
+    height:25px;
+    background:#eb4444;
+    margin:0 auto;
+    transition:0.2s;
+    text-transform:uppercase;
+    line-height:25px;
+    border-radius:5px;
+    font-size:0.8em;
+    text-align:center;
+    color:#fff;
+    margin-top:5px;
+}
+
+.btn-remover:hover{
+    background:red;
+    color:#000;
+    transition:0.2s;
+}
+
+.foto-show{
+    display:block;
+    width:150px;
+    height:150px;
+    border-radius:5px;
+    margin:0 auto;
+    margin-top:35px;
+    margin-bottom:5px;
+}
+
+.nome-workshop-carrossel{
+    display:block;
+    width:100%;
+    height:40px;
+    margin:0 auto;
+    background:blue;
+    font-size:1.5em;
+    color:#fff;
+    line-height:40px;
+    text-align:center;
+}
+

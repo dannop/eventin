@@ -1,0 +1,54 @@
+<% provide(:title, "Usuários | ")%>
+<div class="users">
+    <p id="notice"><%= notice %></p>
+    <div class="busca-users">
+        <%= form_tag(users_path, method: :get) do %>  
+          <%= text_field_tag :term, params[:term], :placeholder => "Procure por nomes..",:class => "busca-input" %>
+          <%= submit_tag 'Encontrar', name: nil,:class => "busca-submit" %>
+        <% end %>    
+    </div>  
+    <table class="ui striped table" id="users_adm">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Ej</th>
+          <th>Quarto</th>
+          <th>Foto</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td class="auxiliares-user">Nome</td>
+            <td><%= user.name %><a> </a><%= user.last_name %></td>
+            <td class="auxiliares-user">Empresa Jr</td>
+            <td><%= user.ej.name if user.ej.present?%></td>
+            <td class="auxiliares-user">Quarto</td>
+            
+            
+            <% if user.room.present? %>
+              <td><%= user.room %></td>
+        <% else %>
+          <td>Nenhum Quarto</td>
+        <% end %>
+            
+            
+            <td>
+              <div class="user-image">
+                <%= image_tag(user.photo, :class => "foto-user-index") %>
+              </div>
+              </td>
+            <td><%= link_to 'Mostrar', user,:class => "btn-index-users" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="users-footer">
+      <%= will_paginate @users, :previous_label => 'Anterior', :next_label => 'Próxima', :class => "paginacao-users-index"%>
+      <div class="hotel-links">
+        <%= link_to 'Baixar Planinha de Usuarios', users_path(format: :xlsx),:class => 'baixar-planilha' %>
+        <%= link_to 'Criar usuário', new_user_path, :class =>'submit-butao' %>
+      </div>
+    </div>
+</div>

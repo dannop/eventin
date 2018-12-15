@@ -1,0 +1,43 @@
+<div class="form-padrao">
+   <div class="container">
+      <% if !@archive.errors.empty? %>
+      <div class = "alert-error">
+         <ul>
+            <% @archive.errors.full_messages.each do |msg| %>
+               <li><%= msg %></li>
+            <% end %>
+         </ul>
+      </div>
+      <% end %>
+   
+   <%= form_for @archive, html: { multipart: true } do |f| %>
+      <div class="archives-new">
+            <div class="ui form">
+               
+               <div class="titulo-archives">
+                     <h3>Disponibilizar material</h3>
+               </div>
+               <div class = "field">
+                  <%= f.label "Nome do arquivo" %>
+                  <%= f.text_field :name %>
+               </div>
+               
+               <div class="field">
+                  <%= f.label "Selecione a palestra" %>
+                  <%= f.select :lecture_id, @lectures.collect { |lecture| [lecture.title, lecture.id] }, :include_blank => true %>
+               </div>
+               
+               <div class="field">
+                  <%= f.label "Anexar arquivo" %>
+                  <%= f.file_field :attachment %>
+               </div>
+               
+               <div class="btn-archives">
+                  <%= f.submit "Salvar",:class => "submit-butao" %>
+               </div>
+               
+            </div>
+      </div>
+   <% end %>
+   </div>
+</div>

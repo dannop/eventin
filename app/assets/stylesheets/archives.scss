@@ -1,0 +1,87 @@
+.archives-new{
+  width:500px;
+  margin:0 auto;
+}
+
+.titulo-archives{
+    width:400px;
+    height:80px;
+    border:3.5px solid #eb4444;
+    margin:20px auto;
+}
+
+.titulo-archives h3{
+    text-align:center;
+    font-weight:bold;
+    font-size:1.5em;
+    color:#eb4444;
+    text-transform:uppercase;
+    line-height:25px;
+}
+
+.btn-archives{
+  width:75px;
+  height:38px;
+  margin:0 auto;
+}
+
+@media only screen and (min-width:320px) and (max-width:767px){
+    .archives-new{
+      width:95%;
+      margin:0 auto;
+    }
+    
+    .titulo-archives{
+      width:95%;
+      margin:20px auto;
+  }
+  
+    .titulo-archives h3{
+      font-size:1.225em;
+      line-height:25px;
+  }
+}
+
+// -------------------------- Archives - Index --------------------
+
+.btn-index-archives{
+    display:block;
+    width:100px;
+    height:30px;
+    background:#eb4444;
+    color:#fff;
+    line-height:30px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.btn-index-archives:hover{
+    background:red;
+    transition:0.2s;
+}
+
+.auxiliares-archives{
+    display:none;
+}
+
+// .paginacao-archives-index{
+//     text-transform:uppercase;
+//     text-align:center;
+//     margin-top:20px;
+//     color:#000;
+// }
+
+//responsividade da página index
+@media only screen and (min-width:320px) and (max-width:767px){
+    .btn-index-archives{
+        margin:0 auto;
+    }
+    
+    .auxiliares-archives{
+        display:block;
+        font-weight:bold;
+        font-size:1.225em;
+    }
+    
+}

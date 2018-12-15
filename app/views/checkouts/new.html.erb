@@ -1,0 +1,45 @@
+<div class="card-pagamento">
+    <div class="card-vantagens">
+        <div class="card-vantagem">
+            <img width="20" src="/assets/ok.svg"></img>
+            <span>Parcele em até 4x sem juros.</span>
+        </div>
+        <div class="card-vantagem">
+            <img width="20" src="/assets/ok.svg"></img>
+            <span>Parcele em até 4x sem juros.</span>
+        </div>
+        <div class="card-vantagem">
+            <img width="20" src="/assets/ok.svg"></img>
+            <span>Parcele em até 4x sem juros.</span>
+        </div>
+    </div>
+    <div class="card-pagar">
+        <div class="card-hosp">
+            <div class="info">
+                <h3>S/ hospedagem</h3>
+                <% if @lots.count > 0 %>
+                    <h1>R$ <%= @lots.first.price %></h1>  
+                    <%= render 'payment_raw', checkout: @checkout %>
+                <% else %>
+                    <h1> Lote não disponivel</h1>
+                <% end %>
+            </div>
+        </div>
+        
+        <div class="card-hosp no-hosp">
+            <div class="info">
+                <h3>C/ hospedagem</h3>
+                <% if @lots.count > 0 %>
+                    <h1>R$ <%= @lots.first.price + @lots.first.room_with%></h1>
+                    <%= render 'payment_room', checkout: @checkout %>
+                <% else %>
+                    <h1> Lote não disponivel</h1>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <img src="/assets/payments.png"></img>
+    </div>
+    
+</div>

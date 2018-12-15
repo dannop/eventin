@@ -1,0 +1,109 @@
+<% provide(:title, "Acomodações | ")%>
+
+<!--Como o countdown se refere também ao @event-->
+<!--O countdown dessa página foi copiado do countdown do workshop index-->
+<!--e seu css está atrelado ao respectivo css da página original do countdown-->
+
+<% if @event.activity_begin_day > DateTime.now && !@current_user.adm %>
+
+    <div id="tempo-workshop">	
+        <div class="corpo-relogio-workshop">
+                        
+            <p>Faltam</p>
+            <ul>		
+                			
+                <!-- dias -->	
+                <li class="li-countdown-workshop">		
+                	<span id="dias-workshop">		
+                	</span>
+                	<p>Dias</p>
+                </li>
+                
+                <!-- horas -->
+                <li class="li-countdown-workshop">
+                	<span id="horas-workshop">		
+                	</span>
+                	<p>Horas</p>
+                </li>
+                
+                <!-- minutos -->
+                <li class="li-countdown-workshop">
+                	<span id="minutos-workshop">			
+                	</span>
+                	<p>Minutos</p>
+                </li>
+                
+                
+                <!-- segundos -->
+                <li class="li-countdown-workshop">
+                	<span id="segundos-workshop">		
+                	</span>
+                	<p>Segundos</p>
+                </li>
+                
+            </ul>
+                		<p>para a abertura dos Hotéis</p>
+        </div>
+	</div>   
+	
+    <script>
+        // definir o cálculo do tempo em dias, horas, minutos e segundos 
+        const second_w = 1000,
+            minute_w = second_w * 60,
+            hour_w = minute_w * 60,
+            day_w = hour_w * 24;
+                            
+            // definir a data para a contagem regressiva 
+            let contagemTempo_w = new Date('<%= @event.activity_begin_day.month %> <%= @event.activity_begin_day.day %>, <%= @event.activity_begin_day.year %> <%= @event.activity_begin_day.hour %>:<%= @event.activity_begin_day.min %>:<%= @event.activity_begin_day.sec %>').getTime(),
+                        
+            // atualizar a contagem regressiva a cada 1 segundo  
+            x_w = setInterval(function() {
+                        
+            // encontrar a data de agora
+            let hoje_w = new Date().getTime(),
+                        
+            // encontrar a distância entre a data de agora e a data da contagem regressiva    
+            distancia_w = contagemTempo_w - hoje_w;
+                        
+            // aparecer no ecrã a contagem em dias, horas, minutos e segundos e corresponder a mesma ao cálculo do tempo definido acima      
+            document.getElementById('dias-workshop').innerHTML = Math.floor(distancia_w / (day_w)),
+            document.getElementById('horas-workshop').innerHTML = Math.floor((distancia_w % (day_w)) / (hour_w)),
+            document.getElementById('minutos-workshop').innerHTML = Math.floor((distancia_w % (hour_w)) / (minute_w)),
+            document.getElementById('segundos-workshop').innerHTML = Math.floor((distancia_w % (minute_w)) / second_w);
+                              
+            // quando a contagem terminar, desaparecer a data e aparecer uma mensagem 
+            if (distancia_w < 0) {
+                clearInterval(x_w);
+                document.getElementById("tempo-workshop").innerHTML = "FIM"; 
+                              }
+            }, second_w); 
+    </script>
+
+
+<% else %>
+  <div class="hotels">
+    <% @hotels.each do |hotel| %>
+      <div class="hotel">
+        <div class="hotel-card">
+          <%= link_to hotel_path(hotel.id) do %> 
+            <div class="hotel-foto">
+              <img src="/assets/eye.svg" width="60"></img>
+            </div>
+            <div class="hotel-info">
+              <h4><%= hotel.name %></h4>
+              <h5><%= hotel.rooms.count %> quartos</h5>
+              <%= link_to 'Excluir', hotel, method: :delete, :class => "btn-staff-index small", data: { confirm: 'Você tem certeza?' } %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="limpar"></div>
+  <div class="criar-acomod">
+    <%= link_to 'Baixar planinha de Acomodações', hotels_path(format: :xlsx),:class => 'baixar-planilha' %>
+    <% if @current_user.adm? %>
+      <%= link_to 'Criar Acomodação', new_hotel_path, :class =>'submit-butao' %>
+    <% end %>
+  </div>
+<% end %>

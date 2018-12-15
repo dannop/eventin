@@ -1,0 +1,12 @@
+<div class="titulo-show-staff">
+  <h3>Editar Membro</h3>
+</div>
+
+<%= render 'form', staff: @staff %>
+
+<br>
+
+<div class="container-btn-ejs-show">
+      <%= link_to 'Ver', @staff,:class=> "btn-ej-show" %>
+      <%= link_to 'Voltar', staffs_path,:class=> "btn-ej-show" %>
+  </div>

@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<div class="titulo-index-lots">
+  <h3>Lotes</h3>
+</div>
+
+
+<% @lots.each do |lot| %>
+  <div class="container-principal-lots">
+    
+    <div class="bloco-lot">
+      <div class="container-infos-lots">
+          <p>Evento</p>
+          <p><%= lot.event.name %></p>
+      </div>
+      
+      <div class="container-infos-lots">
+          <p>Preço sem quarto</p>
+          <p><%= lot.price %></p>
+      </div>
+      
+      
+      <div class="container-infos-lots">
+        <p>Preço com quarto</p>
+        <p><%= lot.room_with %></p>
+      </div>
+    </div>
+    
+    
+    <div class="bloco-lot-2">
+      <div class="container-infos-lots">
+        <p>Inicio</p>
+        <p><%= lot.open_date.day %>/<%= lot.open_date.month %>/<%= lot.open_date.year %>- <%= lot.open_date.hour %>:<%= lot.open_date.min %></p>
+      </div>
+      
+      <div class="container-infos-lots">
+        <p>Fim</p>
+        <p><%= lot.close_date.day %>/<%= lot.close_date.month %>/<%= lot.close_date.year %>-<%= lot.close_date.hour %>:<%= lot.close_date.min %></p>
+      </div>
+      
+      
+      <div class="container-infos-lots">
+        <p>Total de ingressos</p>
+        <p><%= lot.ticket_total %></p>
+      </div>
+      
+      <div class="container-infos-lots">
+        <p>Disponibilidade</p>
+        <p><%= lot.ticket_current %></p>
+      </div>
+    </div>
+    
+    <div class="container-btn-lots">
+        <%= link_to 'Editar', edit_lot_path(lot),:class => "btn-index-lots" %>
+        
+        <% @lot = lot %>
+        
+        <%= render partial: "update_availability", locals: {lot: @lot} %>
+        
+        <%= link_to 'Ver Mais', lot,:class => "btn-index-lots" %>
+        
+        <%= link_to 'Excluir', lot, method: :delete, data: { confirm: 'Are you sure?' },:class => "btn-index-lots" %>
+      
+    </div>
+  
+    <div class="clear"></div>
+    
+  </div>
+<% end %>
+
+<div class="novo-lote-btn">
+<%= link_to 'Novo Lote', new_lot_path,:class => "submit-butao" %>
+</div>

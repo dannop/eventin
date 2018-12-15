@@ -1,0 +1,16 @@
+wb = xlsx_package.workbook
+wb.styles do |style|
+    highlight_cell = style.add_style(bg_color: "EFC376",
+                                     border: Axlsx::STYLE_THIN_BORDER,
+                                     alignment: { horizontal: :center },
+                                     num_fmt: 8)
+    wb.add_worksheet(name: "Hotels") do |sheet|
+        
+        sheet.add_row ['Nome do Hotel', 'Endereço', 'Descrição'], style: [highlight_cell, highlight_cell, highlight_cell]
+        
+        @hotels.each do |hotel|
+            sheet.add_row
+            sheet.add_row [hotel.name, hotel.address, hotel.description]
+        end
+    end
+end

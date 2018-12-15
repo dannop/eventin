@@ -1,0 +1,30 @@
+<% provide(:title, "Ranking | Empresas Juniores | ")%>
+                <div class="ranking center">
+                    <div class="ejs auto">
+                        <%= link_to ranking_ej_path do %>
+                            <div class="ejs-title">
+                                <h2>Ranking: Empresa Junior</h2>
+                            </div>
+                        <% end %>
+                        <% n = 1 %>
+                        <% @ejs.order(members: :desc).each do |ej| %>
+                            <%= link_to ej_path(ej.id) do %>
+                                <div class="ej">
+                                    <span><%= n %> º</span>
+                                    <div class="ej-logo">
+                                        <%= image_tag(ej.icon) %>
+                                    </div>
+                                    
+                                    <div class="ej-name">
+                                        <%= ej.name %>
+                                    </div>
+                                    
+                                    <div class="ej-info">
+                                        <%= ej.members %>/34 Pagantes
+                                    </div>
+                                </div>
+                                <% n = n + 1 %>
+                            <% end %>
+                        <% end %>
+                    </div>
+</div>

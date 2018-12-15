@@ -1,0 +1,46 @@
+<% provide(:title, "Acomodações | ")%>
+<div class="content" id="acomods">
+<h1>Hotels</h1>
+<!--
+<div class="pesquisar">
+  <%= form_tag(hotels_path, method: :get) do %>
+  <%= text_field_tag :term, params[:term] %>
+  <%= submit_tag 'Pesquisar', name: nil %>
+<% end %>
+-->
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Description</th>
+      <%if current_user.adm  %>
+       <th colspan="3"></th>
+      <% else %>
+        <th colspan="1"></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody id="body" style="background:#f4f4f4;">
+    <% @hotels.each do |hotel| %>
+      <tr>
+        <td><%= hotel.name %></td>
+        <td><%= hotel.address %></td>
+        <td><%= hotel.description %></td>
+        <td><%= link_to 'Show', hotel %></td>
+        <%if current_user.adm  %>
+          <td><%= link_to 'Editar', edit_hotel_path(hotel) %></td>
+          <td><%= link_to 'Remover', hotel, method: :delete, data: { confirm: 'Voce tem certeza?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @hotels %>
+
+<br>
+<%= link_to 'Baixar planinha de Hotels', hotels_path(format: :xlsx) %>
+<br>
+<%= link_to 'New Hotel', new_hotel_path %>
+</div>

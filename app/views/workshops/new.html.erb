@@ -1,0 +1,13 @@
+<% provide(:title, "Novo Workshop | ")%>
+
+    <div class="titulo-form-workshop">
+          <h3>Novo Workshop</h3>
+    </div>
+
+    <div class="formulario">
+    <%= render 'form', workshop: @workshop %>
+    </div>
+    <div class="back"><%= link_to 'Voltar', workshops_path,:class => 'submit-butao' %></div>
+
+
+

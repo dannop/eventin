@@ -1,0 +1,45 @@
+<% provide(:title, "Quartos | ")%>
+
+<h1>Quartos</h1>
+
+<div class="pesquisar">
+  <%= form_tag(rooms_path, method: :get) do %>
+  <%= text_field_tag :term, params[:term] %>
+  <%= submit_tag 'Pesquisar', name: nil %>
+<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Numero</th>
+      <th>Camas de Solteiro</th>
+      <th>Camas de Casal</th>
+      <th>Todas as Camas</th>
+      <th>Hotel</th>
+      <%if current_user.adm  %>
+       <th colspan="8"></th>
+      <% else %>
+        <th colspan="5"></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody id="body" style="background:#f4f4f4;">
+    <% @rooms.each do |room| %>
+      <tr>
+        <td><%= room.number %></td>
+        <td><%= room.bed_one %></td>
+        <td><%= room.bed_two %></td>
+        <td><%= room.bed_one + room.bed_two %></td>
+        <td><%= room.hotel.name %></td>
+        <td><%= link_to 'Show', room %></td>
+        <%if current_user.adm  %>
+          <td><%= link_to 'Editar', edit_room_path(room) %></td>
+          <td><%= link_to 'Remover', room, method: :delete, data: { confirm: 'Voce tem certeza?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @rooms %>
+
+<br>

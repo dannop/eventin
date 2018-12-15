@@ -1,0 +1,338 @@
+<% provide(:title, "Home | ")%>
+<html>
+<head>
+</head>
+<body>
+    
+    
+<div class="conteudo-intro">
+    <h1>Seja bem-vindo, <%= current_user.name %>. </h1> 
+    <div id="fb-root"></div>
+        <script>
+            (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.11&appId=1990788754503259';
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+    <div class="fb-share-button" data-href="https://eventin-rodcav.c9users.io/" data-layout="button_count" data-size="large" data-mobile-iframe="true">
+        <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Feventin-rodcav.c9users.io%2F&amp;src=sdkpreparse">
+            Compartilhar
+        </a>
+    </div>
+</div>
+    
+<div class="user-conteudo">
+        <div class="quartos">
+            <p>Abertura dos Quartos</p>
+            <% if @event.room_begin_day > Time.now %>
+                <div id="tempo-quartos">	
+                    <div class="corpo-relogio-quartos">
+                		<ul>		
+                			
+                			<!-- dias -->	
+                			<li class="li-countdown-quartos">		
+                				<span id="dias-quartos">		
+                				</span>
+                					<p>Dias</p>
+                			</li>
+                
+                
+                			<!-- horas -->
+                			<li class="li-countdown-quartos">
+                				<span id="horas-quartos">		
+                				</span>
+                					<p>Horas</p>
+                			</li>
+                
+                			
+                			<!-- minutos -->
+                			<li class="li-countdown-quartos">
+                				<span id="minutos-quartos">			
+                				</span>
+                					<p>Minutos</p>
+                			</li>
+                
+                
+                			<!-- segundos -->
+                			<li class="li-countdown-quartos">
+                				<span id="segundos-quartos">		
+                				</span>
+                					<p>Segundos</p>
+                			</li>
+                
+                		</ul>		
+                    </div>
+	            </div> 
+	               <% else %>
+    	               <h3 style="text-align:center">Seu quarto</h3>
+	               <% end %>
+	
+                	<script>
+                        	    // definir o cálculo do tempo em dias, horas, minutos e segundos 
+                        const second_q = 1000,
+                              minute_q = second_q * 60,
+                              hour_q = minute_q * 60,
+                              day_q = hour_q * 24;
+                        
+                        
+                        // definir a data para a contagem regressiva 
+                        let contagemTempo_q = new Date('<%= @event.room_begin_day.month %> <%= @event.room_begin_day.day %>, <%= @event.room_begin_day.year %> <%= @event.room_begin_day.hour %>:<%= @event.room_begin_day.min %>:<%= @event.room_begin_day.sec %>').getTime(),
+                        
+                           
+                           // atualizar a contagem regressiva a cada 1 segundo  
+                           x_q = setInterval(function() {
+                        
+                        
+                              // encontrar a data de agora
+                              let hoje_q = new Date().getTime(),
+                        
+                                  // encontrar a distância entre a data de agora e a data da contagem regressiva    
+                                  distancia_q = contagemTempo_q - hoje_q;
+                        
+                        
+                              // aparecer no ecrã a contagem em dias, horas, minutos e segundos e corresponder a mesma ao cálculo do tempo definido acima      
+                              document.getElementById('dias-quartos').innerHTML = Math.floor(distancia_q / (day_q)),
+                              document.getElementById('horas-quartos').innerHTML = Math.floor((distancia_q % (day_q)) / (hour_q)),
+                              document.getElementById('minutos-quartos').innerHTML = Math.floor((distancia_q % (hour_q)) / (minute_q)),
+                              document.getElementById('segundos-quartos').innerHTML = Math.floor((distancia_q % (minute_q)) / second_q);
+                              
+                        
+                              // quando a contagem terminar, desaparecer a data e aparecer uma mensagem 
+                              if (distancia_q < 0) {
+                              clearInterval(x_q);
+                              document.getElementById("tempo-quartos").innerHTML = "FIM"; 
+                              }
+                             
+                            }, second_q); 
+                	</script>  
+     
+
+     
+        </div>
+            
+    <div class="user">
+            <div class="tab">
+                <button class="tablinks active" onclick="openCity(event, 'pagamento')">Pagamento</button>
+                <button class="tablinks" onclick="openCity(event, 'dados')">Dados pessoais</button>
+            </div>
+                
+            <div id="dados" class="colunas">
+                <div class="coluna">
+                    <% if @current_user.name.present? %>
+                        <h4><strong>Nome:</strong> <%= @current_user.name %> <%= @current_user.last_name if @current_user.last_name.present? %> </h4>
+                    <% end %>
+                    <% if @current_user.cpf.present? %>
+                        <h4><strong>CPF:</strong> <%= @current_user.cpf %></h4>
+                    <% end %>
+                    <% if @current_user.ej.present? %>
+                        <h4><strong>Empresa Junior:</strong> <%= @current_user.ej.name %> </h4>
+                    <% end %>
+                    <% if @current_user.ej.present? && @current_user.ej.federation.present? %>
+                        <h4><strong>Faculdade:</strong> <%= @current_user.ej.college %> </h4>
+                    <% end %>
+                </div>
+                    
+                <div class="coluna">
+                    <% if @current_user.birth.present? %>
+                        <h4><strong>Nascimento:</strong> <%= @current_user.birth.to_formatted_s(:rfc822) %></h4>
+                    <% end %>
+                    <% if @current_user.gender.present? %>
+                        <% if @current_user.gender? %>
+                            <h4><strong>Gênero:</strong> Homem </h4>
+                        <% else %>
+                            <h4><strong>Gênero:</strong> Mulher </h4>
+                        <% end %>
+                    <% end %>
+                    <% if @current_user.job? %>
+                        <h4><strong>Cargo:</strong> <%= @current_user.job %></h4>
+                    <% end %>
+                </div>
+            </div>
+                
+            <div class="colunas" id="pagamento">
+                <% if @current_user.adm? %>
+                    <h4 class="titulo-aux-pagamento"> Você é o administrador! </h4>
+                <% else %>
+                    <% if @current_user.payment_status? %>
+                        <h4 class="titulo-aux-pagamento"> Seu pagamento ja foi efetuado! </h4>
+                    <% else %>
+                        <div class="pagamento-status">
+                            <h4>Você ainda não efetuou o pagamento.</h4>
+                            <%= link_to "Pagar",  new_checkout_url, :class => "btn-pagamento"%>
+                        </div>
+                    <% end %>
+                <% end %>
+            </div>
+    </div>
+</div>
+
+<div class="principal-2">
+        <div class="programacao">
+            <div class="programacao-title">
+                <h2>Sua programação</h2>
+            </div>
+            
+        <div class="lectures">
+                    
+                 <div id="tempo">	
+                    <div class="corpo-relogio">
+                		<ul>		
+                			
+                			<!-- dias -->	
+                			<li class="li-countdown">		
+                				<span id="dias">		
+                				</span>
+                					<p>Dias</p>
+                			</li>
+                
+                
+                			<!-- horas -->
+                			<li class="li-countdown">
+                				<span id="horas">		
+                				</span>
+                					<p>Horas</p>
+                			</li>
+                
+                			
+                			<!-- minutos -->
+                			<li class="li-countdown">
+                				<span id="minutos">			
+                				</span>
+                					<p>Minutos</p>
+                			</li>
+                
+                
+                			<!-- segundos -->
+                			<li class="li-countdown">
+                				<span id="segundos">		
+                				</span>
+                					<p>Segundos</p>
+                			</li>
+                
+                		</ul>		
+                    </div>
+	               </div>   
+	
+                	<script>
+                        	    // definir o cálculo do tempo em dias, horas, minutos e segundos 
+                        const second = 1000,
+                              minute = second * 60,
+                              hour = minute * 60,
+                              day = hour * 24;
+                        
+                        
+                        // definir a data para a contagem regressiva 
+                        let contagemTempo = new Date('<%= @event.activity_begin_day.month %> <%= @event.activity_begin_day.day %>, <%= @event.activity_begin_day.year %> <%= @event.activity_begin_day.hour %>:<%= @event.activity_begin_day.min %>:<%= @event.activity_begin_day.sec %>').getTime(),
+                        
+                           
+                           // atualizar a contagem regressiva a cada 1 segundo  
+                           x = setInterval(function() {
+                        
+                        
+                              // encontrar a data de agora
+                              let hoje = new Date().getTime(),
+                        
+                                  // encontrar a distância entre a data de agora e a data da contagem regressiva    
+                                  distancia = contagemTempo - hoje;
+                        
+                        
+                              // aparecer no ecrã a contagem em dias, horas, minutos e segundos e corresponder a mesma ao cálculo do tempo definido acima      
+                              document.getElementById('dias').innerHTML = Math.floor(distancia / (day)),
+                              document.getElementById('horas').innerHTML = Math.floor((distancia % (day)) / (hour)),
+                              document.getElementById('minutos').innerHTML = Math.floor((distancia % (hour)) / (minute)),
+                              document.getElementById('segundos').innerHTML = Math.floor((distancia % (minute)) / second);
+                              
+                        
+                              // quando a contagem terminar, desaparecer a data e aparecer uma mensagem 
+                              if (distancia < 0) {
+                              clearInterval(x);
+                              document.getElementById("tempo").innerHTML = "FIM"; 
+                              }
+                             
+                            }, second); 
+                	</script>
+                
+                    
+            </div>
+        </div>
+            
+        <div class="ejs">
+            <div class="ranking">
+                    <div class="ejs-1">
+                        <%= link_to ranking_ej_path do %>
+                        <div class="ejs-title">
+                            <h2>TOP 5: Empresa Junior</h2>
+                        </div>
+                        <% end %>
+                        <% n = 1 %>
+                        
+                        <% @ejs.order(members: :desc).limit(5).each do |ej| %>
+                            <%= link_to ej_path(ej.id) do %>
+                                <div class="ej">
+                                    <span><%= n %> º</span>
+                                    <div class="ej-logo">
+                                        <% if ej.icon.present? %>
+                                            <%= image_tag(ej.icon) %>
+                                        <% else %>
+                                            <img class ="user" src="/assets/noimage.jpg" alt="">
+                                        <% end %>
+                                    </div>
+                                    
+                                    <div>
+                                       <%= ej.name %>
+                                    </div>
+                                    
+                                    <div class="ej-info">
+                                        <%= ej.members %>/34 Pagantes
+                                    </div>
+                                </div>
+                                <% n = n + 1 %>
+                            <% end %>
+                        <% end %>
+                    </div>
+                    
+                    <div class="ejs-1">
+                        <%= link_to ranking_federation_path do %>
+                            <div class="ejs-title">
+                                <h2>TOP 5: Federação</h2>
+                            </div>
+                        <% end %>
+                        <% n = 1 %>
+                        <% @federations.order(members: :desc).limit(5).each do |federation| %>
+                            <%= link_to federation_path(federation.id) do %>
+                                <div class="ej">
+                                    <span><%= n %> º</span>
+                                    <div class="ej-logo">
+                                        <% if federation.icon.present? %>
+                                            <%= image_tag(federation.icon) %>
+                                        <% else %>
+                                            <img class ="user" src="/assets/noimage.jpg" alt="">
+                                        <% end %>
+                                    </div>
+                                        
+                                    <div >
+                                        <%= federation.name %>
+                                    </div>
+                                        
+                                    <div class="ej-info">
+                                        <%= federation.members %>/34 Pagantes
+                                    </div>
+                                </div>
+                                <% n = n + 1 %>
+                            <% end %>
+                        <% end %>
+                    </div>
+            </div>
+            <script>
+                $(document).ready(function(){
+                    $('.ranking').bxSlider({auto: true});
+                });
+            </script>
+        </div>
+</div>
+</body>
+
+</html>

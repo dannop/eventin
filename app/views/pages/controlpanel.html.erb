@@ -1,0 +1,172 @@
+<% provide(:title, "Painel de Controle | ")%>
+
+<div class="titulo-forms-control-painel">
+  <h1>Opções do administrador</h1>
+</div>
+
+<br>
+
+<div class="dido">
+  <div class="container-control-painel">
+      <div id="btn-menu">Nova Acomodação</div>
+      <script>
+        $(document).on('click', '#btn-menu', function () {
+	      $('#container-forms').slideToggle('slow');
+        });
+      </script>
+      
+      <div id="container-forms">
+          <%= render partial: "control_hotel" %>
+      </div>
+  </div>
+  
+  <div class="container-control-painel">
+      <div id="btn-menu-quarto">Novo Quarto</div>
+      <script>
+        $(document).on('click', '#btn-menu-quarto', function () {
+	      $('#container-forms-quartos').slideToggle('slow');
+        });
+      </script>
+      
+      <div id="container-forms-quartos">
+          <%= render partial: "control_room" %>
+      </div>
+  </div>
+  
+  <div class="container-control-painel">
+      <div id="btn-menu-palestras">Nova Palestra</div>
+      <script>
+        $(document).on('click', '#btn-menu-palestras', function () {
+	      $('#container-forms-palestras').slideToggle('slow');
+        });
+      </script>
+      
+      <div id="container-forms-palestras">
+          <%= render partial: "control_lecture" %>
+      </div>
+  </div>
+  
+  <div class="container-control-painel">
+      <div id="btn-menu-workshop">Novo Workshop</div>
+      <script>
+        $(document).on('click', '#btn-menu-workshop', function () {
+	      $('#container-forms-workshop').slideToggle('slow');
+        });
+      </script>
+      
+      <div id="container-forms-workshop">
+          <%= render partial: "control_workshop" %>
+      </div>
+  </div>
+  
+  <div class="container-control-painel">
+      <div id="btn-menu-category">Nova Categoria</div>
+      <script>
+        $(document).on('click', '#btn-menu-category', function () {
+	      $('#container-forms-category').slideToggle('slow');
+        });
+      </script>
+      
+      <div id="container-forms-category">
+          <%= render partial: "control_category" %>
+      </div>
+  </div>
+  
+  <div class="container-control-painel">
+    <h2 class="titulo-category">Categorias Disponíveis</h2>
+    <% @categorys.each do |category| %>
+      <div class="container-category">
+        <p><%= category.kind %></p> 
+        <p><%= link_to "Remover", remove_category_path(category), method: :delete%></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+      <ul>
+          <li>
+            <%= link_to events_path, :class=> "navBtn" do %>
+              <img width="50" src="/assets/user_control" class="user_control"></img>
+              Controle do Evento
+            <% end %>
+          </li>
+          <li>
+            <%= link_to :users_crud, :class=> "navBtn" do %>
+              <img width="50" src="/assets/user_control" class="user_control"></img>
+              Controle de Usuários
+            <% end %>
+          </li>
+          
+          <li>
+            <%= link_to federations_path, :class=> "navBtn" do %>
+              <img width="100" height="100" src="/assets/fed_control"></img>
+              Controle de Federações
+            <% end %>
+          </li>
+          
+          <li>
+            <%= link_to ejs_path, :class=> "navBtn" do %>
+              <img width="50" src="/assets/ej_control" class="ej_control"></img>
+              Controle de Empresas de Juniores
+            <% end %>
+          </li>
+          
+          <li>
+            <%= link_to new_lecture_path, :class=> "navBtn" do %>
+              <img width="100" height="100" src="/assets/fed_control"></img>
+              Controle de Todos as Palestras
+            <% end %>
+          </li>
+          
+          <li>
+            <%= link_to workshops_path, :class=> "navBtn" do %>
+              <img width="100" height="100" src="/assets/fed_control"></img>
+              Controle de Todos os Workshops
+            <% end %>
+          </li>
+          
+          <li>
+            <%= link_to archives_path, :class=> "navBtn" do %>
+              <img width="100" height="100" src="/assets/fed_control"></img>
+              Visualizar Arquivos para Atividades
+            <% end %>
+          </li>
+          
+          <li>
+            <%= link_to hotels_path, :class=> "navBtn" do %>
+              <img width="100" height="100" src="/assets/fed_control"></img>
+              Controle de todos as Acomodações
+            <% end %>
+          </li>
+          
+          <li>
+            <%= link_to rooms_path, :class=> "navBtn" do %>
+              <img width="100" height="100" src="/assets/fed_control"></img>
+              Controle de todos os Quartos
+            <% end %>
+          </li>
+          
+          <li>
+            <%= link_to lots_path, :class=> "navBtn" do %>
+              <img width="100" height="100" src="/assets/fed_control"></img>
+              Controle do Lote
+            <% end %>
+          </li>
+          
+          <li>
+            <a href="https://sandbox.pagseguro.uol.com.br/transacoes.html">
+              <img width="100" height="100" src="/assets/fed_control"></img>
+              Controle dos Pagamentos
+            </a>
+          </li>
+          
+          <li>
+            <%= link_to transfers_url, :class=> "navBtn" do %>
+              <img width="100" height="100" src="/assets/fed_control"></img>
+              Controle de Transferencias
+            <% end %>
+          </li>
+          
+      </ul>
+</div>

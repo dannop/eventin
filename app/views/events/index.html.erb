@@ -1,0 +1,37 @@
+<% @div = true %>
+<% provide(:title, "Evento | ")%>
+<div class="evento" id="acomods">
+  <div class="evento-intro">
+    <h1>Sobre o <%= @event.name %></h1>
+  </div>
+  
+  <div class="evento-desc">
+    <img width="30" src="/assets/event-arrow.svg"></img>
+    <p><%= @event.description %></p>
+  </div>
+  
+  <% @events.each do |event| %>
+    <div class="evento-cards">
+      <div class="evento-card">
+        <img src="/assets/event-time.svg" width="50"></img>
+        <h3>O inicio do evento será no dia <%= event.begin_day.day %>/<%= event.begin_day.month %> ás <%= event.begin_day.hour %>:00 e o seu fim está previsto para o dia <%= event.end_day.day %>/<%= event.end_day.month %> ás <%= event.end_day.hour %>:00, contamos com vocês ;) </h3>
+      </div>
+      <div class="evento-card">
+        <img src="/assets/1.svg" width="50"></img>
+        <h3>O inicio das atividades será no dia <%= event.activity_begin_day.day %>/<%= event.activity_begin_day.month %> ás <%= event.activity_begin_day.hour %>:00 e o seu fim está previsto para o dia <%= event.activity_end_day.day %>/<%= event.activity_end_day.month %> ás <%= event.activity_end_day.hour %>:00, contamos com vocês ;) </h3>
+      </div>
+      <div class="evento-card no-border">
+        <img src="/assets/event-time.svg" width="50"></img>
+        <h3>O inicio do evento será no dia <%= event.begin_day.day %>/<%= event.begin_day.month %> ás <%= event.begin_day.hour %>:00 e o seu fim está previsto para o dia <%= event.end_day.day %>/<%= event.end_day.month %> ás <%= event.end_day.hour %>:00, contamos com vocês ;) </h3>
+      </div>
+    </div>  
+  <% end %>
+  <div class="limpar"></div>
+    <div class="hotel-links center-left">
+      <% if @current_user.adm? %>
+      <td><%= link_to 'Mais detalhes', @event, :class => "btn-staff-index no-block" %></td>
+      <td><%= link_to 'Editar', edit_event_path(@event), :class => "btn-staff-index no-block" %></td>
+      <td><%= link_to 'Remover', @event, method: :delete, :class => "btn-staff-index no-block", data: { confirm: 'Voce tem certeza?' } %></td>
+    <% end %>
+  </div>
+</div>

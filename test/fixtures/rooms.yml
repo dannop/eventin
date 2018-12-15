@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  availability: false
+  vacancies: 1
+  number: MyString
+
+two:
+  availability: false
+  vacancies: 1
+  number: MyString

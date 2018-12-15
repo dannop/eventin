@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  calendar: 2017-09-19
+  availability: false
+  vacancies: 1
+  description: MyText
+  event: one
+
+two:
+  calendar: 2017-09-19
+  availability: false
+  vacancies: 1
+  description: MyText
+  event: two

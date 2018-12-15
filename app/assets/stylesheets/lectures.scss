@@ -1,0 +1,122 @@
+// Place all the styles related to the Lectures controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.countdown {
+    width:100%;
+    padding:20px;
+    text-align:center;
+    background:white;
+    border-radius:4px;
+    margin:auto;
+    position:relative;
+    border:none;
+}
+.is-countdown {
+    border:none !important;
+    background:none;
+}
+.countdown img {
+    position:absolute;
+    right:10px;
+    top:10px;
+}
+.countdown span {
+    text-align:center;
+    padding:3px;
+}
+.countdown-time {
+    font-size:12px;
+}
+#lecture_begin_day_timer {
+    border:none;
+}
+.carrossel {
+    position:relative;
+    top:50px;
+}
+.foto-lectures {
+    border-radius:400px;
+    width:50px !important;
+    height:50px;
+    margin:auto;
+}
+#slider {
+    height:200px;
+}
+.lec_staff{
+    float:left;
+    margin-left:20px;
+    margin-top:20px;
+}
+.lec_staff h4 {
+    position:relative;
+    top:-15px;
+}
+.criar-acomod {
+    position:absolute;
+    bottom:0px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    max-width:450px;
+    width:90%;
+}
+.criar-acomod a {
+    margin-top:30px;
+}
+
+
+//----------------------Countdown--------------------------
+#lec-countdown{
+  width: 400px;
+}
+/* Change this setting above to change the size of the whole countdown including the font */
+
+*{
+}
+
+#lec-countdowndays p{
+  opacity:1;
+  margin:0;
+  padding:0;
+}
+#lec-countdownhours p{
+  opacity: 0.8;
+  margin:0;
+  padding:0;
+}
+#leccountdownmins p{
+  opacity: 0.6;
+  margin:0;
+  padding:0;
+}
+#lec-countdownsecs p{
+  opacity: 0.4;
+  margin:0;
+  padding:0;
+}
+
+#lec-countdown {
+	text-transform: uppercase;
+  display:block;
+  border:10px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  margin-left:auto;
+  margin-right:auto;
+  transition:.1s ease-in-out;
+}
+
+.lec-box{
+  white-space:nowrap;
+  line-height:0.8;
+  margin-bottom:10px;
+}
+
+.lec-box p{
+	font-size: 1em;
+  font-weight: 900;
+  display:inline-block;
+  font-family: Helvetica, Arial, Sans-Serif;
+  color: black;
+}

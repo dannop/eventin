@@ -1,0 +1,54 @@
+<% provide(:title, "Empresas Juniores | ")%>
+<div class="empresasjr">
+  <div class="busca-users">
+      <%= form_tag(ejs_path, method: :get) do %>
+    <%= text_field_tag :term, params[:term],:class => "busca-input", :placeholder => "Procure por nomes.." %>
+    <%= submit_tag 'Pesquisar', name: nil, :class => "busca-submit" %>
+    <% end %>   
+</div> 
+<table class="ui striped table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Universidade</th>
+      <th>Federação</th>
+      <th>Federada</th>
+      <th>Logo</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ejs.each do |ej| %>
+      <tr>
+        <td class="auxiliares-ejs">Nome</td>
+        <td><%= ej.name %></td>
+        <td class="auxiliares-ejs">Universidade</td>
+        <td><%= ej.college %></td>
+        <td class="auxiliares-ejs">Federada</td>
+        <% if ej.federated? %>
+          <td>Sim</td>
+        <% else %>
+          <td>Não</td>
+        <% end %>
+        <td class="auxiliares-ejs">Federação</td>
+        <% if ej.federation.present? %>
+          <td><%= ej.federation.name %></td>
+        <% else %>
+          <td>Nenhuma</td>
+        <% end %>
+        
+        <td><%= image_tag(ej.icon, width:'50') %></td>
+        <td><%= link_to 'Mostrar', ej,:class => "btn-index-users" %></td>
+        <td><%= link_to 'Editar', edit_ej_path(ej),:class => "btn-index-users" %></td>
+        <td><%= link_to 'Remover', ej, method: :delete, data: { confirm: 'Voce tem certeza?' },:class => "btn-index-users" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @ejs, :previous_label => 'Anterior', :next_label => 'Próxima', :class => "paginacao-ejs-index" %>
+<br>
+<div class="ejs-footer">
+  <%= link_to 'Criar Empresa Junior', new_ej_path, :class =>'submit-butao' %>
+</div>
+</div>

@@ -1,0 +1,13 @@
+<% if lecture.vacancies > 0 %>
+  <% if @lecusers.find_by(lecture_id: lecture.id, user_id: current_user.id)%>
+    <td><%= link_to 'Cancelar', lecture_inscription_path(lecture.id), method: :patch, id: "inscription", remote: true, authenticity_token: true%></td>
+  <% else %>
+    <td><%= link_to 'Inscreva-se', lecture_inscription_path(lecture.id), method: :patch, id: "inscription", remote: true, authenticity_token: true%></td>
+  <% end %>
+<% else %>
+  <% if @lecusers.find_by(lecture_id: lecture.id, user_id: current_user.id)%>
+    <td><%= link_to 'Cancelar', lecture_inscription_path(lecture.id), method: :patch, id: "inscription", remote: true, authenticity_token: true%></td>
+  <% else %>
+    <td>Não há vaga disponível</td>
+  <% end %>
+<% end %>

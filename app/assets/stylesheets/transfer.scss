@@ -1,0 +1,103 @@
+//------------------------------ index transfer -------------------------
+
+.titulo-transfer{
+    width:400px;
+    height:80px;
+    border:3.5px solid #eb4444;
+    margin:30px auto;
+    
+}
+
+.titulo-transfer h3{
+    text-align:center;
+    font-weight:bold;
+    font-size:2em;
+    color:#eb4444;
+    text-transform:uppercase;
+    line-height:10px;
+}
+
+
+.busca-transfer {
+    margin:auto;
+    display:block;
+    margin-bottom:20px;
+    margin-top:20px;
+}
+.busca-transfer form {
+    display:flex;
+    justify-content:center;
+}
+.busca-transfer input {
+    max-width:200px;
+    width:100%;
+    background:#dedede;
+    border:none;
+    height:40px;
+    margin-left:20px;
+    border-radius:4px;
+    float:left;
+    color:#a0a0a0
+}
+.busca-transfer .busca-submit-transfer {
+    max-width:100px;
+    float:left;
+    color:#999494
+}
+.busca-transfer .busca-input-transfer {
+    padding:0px 10px;
+    margin:0;
+    color:#a0a0a0
+}
+
+
+.auxiliares-transfer{
+    display:none;
+}
+
+.paginacao-transfer-index{
+    text-transform:uppercase;
+    text-align:center;
+    margin-top:20px;
+    color:#000;
+}
+
+
+//responsividade da página index
+@media only screen and (min-width:320px) and (max-width:767px){
+    .titulo-transfer{
+        width:95%;
+    }
+    
+    .auxiliares-transfer{
+        display:block;
+        font-weight:bold;
+        font-size:1.225em;
+    }
+    
+}
+
+//---------------------------- New Transfer ---------------------
+
+// a classe titulo-tranfer foi reaproveitada da parte index desta mesma página
+
+.form-padrao-transfer{
+    width:700px;
+    margin:30px auto;
+}
+
+.btn-tranferir-new{
+    width:98px;
+    height:40px;
+    margin:0 auto;
+}
+
+//responsividade da página new
+@media only screen and (min-width:320px) and (max-width:767px){
+    .form-padrao-transfer{
+        width:95%;
+    }
+    
+    
+    
+}

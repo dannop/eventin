@@ -1,0 +1,39 @@
+<%= form_for( @hotel, url: hotel_from_controller_path, method: :post) do |form| %>
+  <% if @hotel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hotel.errors.count, "error") %> prohibited this hotel from being saved:</h2>
+
+      <ul>
+      <% @hotel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+    <div class="ui form">
+      <div class="field">
+        <%= form.label :Nome %>
+        <%= form.text_field :name, id: :hotel_name %>
+      </div>
+    
+      <div class="field">
+        <%= form.label :Endereço %>
+        <%= form.text_field :address, id: :hotel_address %>
+      </div>
+    
+      <div class="field">
+        <%= form.label :Descrição %>
+        <%= form.text_area :description, id: :hotel_description %>
+      </div>
+      
+      <div class="field">
+        <%= form.label "Foto" %>
+        <%= form.file_field :photo, id: :hotel_photo %>
+      </div>
+      
+      <div class="actions-control-painel">
+        <%= form.submit "Criar", :class => 'submit-butao' %>
+      </div>
+    </div>
+  <% end %>

@@ -1,0 +1,105 @@
+<div class="form-padrao">
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="ui form">
+  
+  <div class="field">
+  <div class="two fields">
+    <div class="field">
+      <%= form.label :Nome %>
+      <%= form.text_field :name, id: :user_name %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :Sobrenome %>
+      <%= form.text_field :last_name, id: :user_name %>
+    </div>
+  </div>
+  </div>
+    <div class="field">
+      <%= form.label :Email %>
+      <%= form.text_field :email, id: :user_email %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :password, "Senha" %>
+      <%= form.password_field :password %>
+    </div>
+    
+    <div class="field">
+      <%= form.label :password_confirmation, "Confirme sua senha" %>
+      <%= form.password_field :password_confirmation %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :CPF %>
+      <%= form.text_field :cpf, id: :user_cpf %>
+    </div>
+    
+    <div class="field">
+      <%= form.label :Trabalho %>
+      <%= form.text_field :job, id: :user_job %>
+    </div>
+  
+    <div style="max-width:500px;float:left;" class="field">
+      <label>Data de nascimento </label>
+      <%= form.date_field :birth, id: :user_birth, :class => "user-birth" %>
+    </div>
+<div class="grouped fields">
+    <div class="field">
+      <div class="ui radio checkbox">
+        <%= form.label :Gênero %>
+        <%= form.check_box :gender, id: :user_gender %>
+      </div>
+    </div>
+    
+    <% if current_user.adm? %>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <%= form.label :Administrador %>
+          <%= form.check_box :adm, id: :user_adm %>
+        </div>
+      </div>
+      
+      <div class="field">
+        <div class="ui radio checkbox">
+          <%= form.label :payment_status %>
+          <%= form.check_box :payment_status, id: :user_payment_status %>
+        </div>
+      </div>
+      
+      <div class="field">
+        <div class="ui radio checkbox">
+          <%= form.label :email_confirmed %>
+          <%= form.check_box :email_confirmed, id: :user_email_confirmed %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <%= form.label "Selecione a Empresa Junior" %>
+      <%= form.select(:ej_id, @ejs.collect { |ej| [ej.name, ej.id] }, {include_blank: "Nenhuma"}) %>
+    </div>
+  
+    <div class="field">
+      <%= form.label "Foto" %>
+      <%= form.file_field :photo, id: :user_photo %>
+    </div>
+  
+    <div class="actions">
+     <%= form.submit 'Enviar', :class => 'btn-form-user' %>
+    </div>
+  </div>
+<% end %>
+</div>

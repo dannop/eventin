@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lots</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Price</th>
+      <th>Ticket</th>
+      <td>Comprável</td>
+      <td>Data de Abertura</td>
+      <td>Data de Fechamento(vamo fechar?)</td>
+      <td>Adicional para quarto</td>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lots.each do |lot| %>
+      <tr>
+        <td><%= lot.event %></td>
+        <td><%= lot.price %></td>
+        <td><%= lot.purchasable %></td>
+        <td><%= lot.open_date %></td>
+        <td><%= lot.close_date %></td>
+        <td><%= lot.room_with %></td>
+        <td><%= lot.room_check %></td>
+        <td><%= link_to 'Show', lot %></td>
+        <td><%= link_to 'Edit', edit_lot_path(lot) %></td>
+        <td><%= link_to 'Destroy', lot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lot', new_lot_path %>

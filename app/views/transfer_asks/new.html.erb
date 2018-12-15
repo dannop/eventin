@@ -1,0 +1,24 @@
+    <div class="titulo-transfer">   
+        <h3>Transferências</h3>
+    </div>
+
+<div class="form-padrao-transfer">
+<%= form_for(@transferask, url: create_transfer_url) do |form| %>
+  <div class="ui form">
+    
+    <div class="field">
+      <%= form.label "Usuario de Origem:" %>
+      <%= form.select(:replyer_id, @users.collect { |user| [user.name, user.id] }) %>
+    </div>
+  
+    <div class="field">
+      <%= form.label "Usuario de Destino:" %>
+      <%= form.select(:asker_id, @users.collect { |user| [user.name, user.id] }) %>
+    </div>
+  
+    <div class="btn-tranferir-new">
+      <%= form.submit 'Transferir', :class => "submit-butao" %>
+    </div>
+  </div>
+<% end %>
+</div>

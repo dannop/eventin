@@ -1,0 +1,48 @@
+<%= form_for(@workshop, url: workshop_from_controller_path, method: :post) do |form| %>
+  <% if @workshop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@workshop.errors.count, "error") %> prohibited this workshop from being saved:</h2>
+
+      <ul>
+      <% @workshop.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="ui form">
+  <div class="field">
+    <%= form.label "Selecione o Evento" %>
+    <%= form.select(:event_id, @events.collect { |event| [event.name, event.id] }, {include_blank: "Nenhum"}) %>
+  </div>
+  
+  <div class="field">
+    <%= form.label "Selecione a categoria" %>
+    <%= form.select :category, @categorys.collect { |category| [category.kind, category.id] }, {include_blank: "Nenhuma"} %>
+  </div>
+    
+  <div class="field">
+    <%= form.label :Titulo %>
+    <%= form.text_field :title, id: :workshop_title %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :"Dia e Horário" %>
+    <%= form.datetime_select :the_day, id: :workshop_the_day %>
+  </div> 
+
+  <div class="field">
+    <%= form.label :Vagas %>
+    <%= form.number_field :vacancies, id: :workshop_vacancies %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Descrição %>
+    <%= form.text_area :description, id: :workshop_description %>
+  </div>
+
+  <div class="actions-control-painel">
+    <%= form.submit "Criar", :class => 'submit-butao' %>
+  </div>
+</div>
+<% end %>

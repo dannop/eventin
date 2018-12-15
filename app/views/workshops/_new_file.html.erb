@@ -1,0 +1,26 @@
+<div class="container"><h3 class="pageTitle">Disponibilizar material</h3>
+   <% if !@archive.errors.empty? %>
+   <div class = "alert-error">
+      <ul>
+         <% @archive.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+         <% end %>
+      </ul>
+   </div>
+   <% end %>
+
+<%= form_for @archive, html: { multipart: true } do |f| %>
+   <div class="ui form">
+   <div class = "field">
+      <%= f.label "Anexar arquivo" %>
+      <%= f.file_field :attachment, :class => 'submit-butao' %>
+      <%= f.label "Nome do arquivo" %>
+      <%= f.text_field :name %>
+      <%= f.label "Descrição do Arquivo" %>
+      <%= f.text_field :description %>
+      <%= hidden_field_tag "archive[workshop_id]" , @workshop.id %>
+      <div class="btn-adc-arquivo"><%= f.submit "Salvar", :class => 'submit-butao' %></div>
+   </div>
+   </div>
+<% end %>
+</div>

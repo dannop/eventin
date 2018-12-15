@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticket_id: 1
+  lot_id: 1
+  price: 1
+  status: MyString
+  buyer_name: MyString
+  referebce: MyString
+
+two:
+  ticket_id: 1
+  lot_id: 1
+  price: 1
+  status: MyString
+  buyer_name: MyString
+  referebce: MyString

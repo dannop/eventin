@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  email: MyString
+  password_digest: MyString
+  cpf: MyString
+  password_confirmation: false
+  birth: 2017-09-19
+  gender: false
+  pament_type: 1
+  payment_status: false
+  ej: one
+  room: one
+  profile_photo: MyString
+
+two:
+  name: MyString
+  email: MyString
+  password_digest: MyString
+  cpf: MyString
+  password_confirmation: false
+  birth: 2017-09-19
+  gender: false
+  pament_type: 1
+  payment_status: false
+  ej: two
+  room: two
+  profile_photo: MyString

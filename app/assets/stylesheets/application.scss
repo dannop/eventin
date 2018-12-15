@@ -1,0 +1,362 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require jquery.countdown
+ *= require bxslider
+ *= require_tree .
+ */
+.content {
+    width: calc(100% - 210px);
+    margin-left: 210px;
+    padding-bottom: 100px;
+    padding-top: 50px;
+    position:relative;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+.alert {
+  position:absolute;
+  text-align:center;
+  height:35px;
+  background:white;
+  opacity:0.92;
+  color:black;
+  width:100%;
+  z-index:3000;
+  font-size:15px;
+}
+.alert-danger {
+  background:red;
+  color:white;
+}
+.alert-warning {
+  background:yellow;
+  color:white;
+}
+.alert span {
+  position:relative;
+  top:8px;
+}
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+#video-background {
+    position: fixed;
+    right: 0; 
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto;
+    background:black;
+    background-opacity:0.5;
+}
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+ *, *:before, *:after {
+    -webkit-box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Avenir Demi';
+    height: 100% !important;
+    margin:0 auto;
+}
+.cards {
+    width: calc(100% - 200px);
+    margin-left: 200px;
+    padding-bottom: 100px;
+    padding-top: 50px;
+    overflow-x: hidden;
+    position:relative;
+}
+.busca-butao {
+    background:none;
+    border:none;
+}
+.card-title {
+    margin-top: 65px;
+    margin-left: 40px;
+    margin-bottom:-20px;
+    color: black;
+}
+.cards-nav {
+    position:relative;
+    width:100%;
+    background: white;
+    height: 70px;
+    margin:0 auto;
+    border-top:1px solid #dedede;
+}
+.cards-nav .input {
+    width: 60%;
+    height: 70px;
+    border:none;
+    border-bottom:1px solid #dedede;
+    border-right:1px solid #dedede;
+    border-left:1px solid #dedede;
+    outline:none;
+    font-size:17px;
+    padding: 0 25px;
+    float: left;
+    background-image:url("/assets/search.svg");
+    background-repeat:no-repeat;
+    background-size:33px;
+    background-position:right;
+    background-position:95% 70%;
+    
+}
+.cards-nav .busca-rapida {
+    width: 40%;
+    float: right;
+    height: 70px;
+    border-bottom:1px solid #dedede;
+    border-right:1px solid #dedede;
+    background: white;
+    overflow:auto;
+}
+.cards-nav .busca-rapida .links {
+    width: 400px;
+    margin: auto;
+    height: 70px;
+    margin-top: 22px;
+    display:block;
+    overflow:auto;
+}
+.cards-nav .busca-rapida a {
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius:30px;
+    padding: 3px 12px;
+    float: left;
+    margin-left: 20px;
+    color: black;
+    transition: 0.3s
+}
+.cards-nav .busca-rapida a:hover {
+    background: black;
+    color: white;
+}
+.card {
+    width: 31%;
+    float: left;
+    margin: auto;
+    display: block;
+    margin-top:60px;
+    margin-left: 20px;
+}
+.card .card-foto {
+    position: relative;
+    height:230px;
+    background:#0066cc;
+}
+.green {
+    background:#00d9d3 !important;
+}
+.card .card-foto .lecture-title {
+    color:white;
+    text-align:center;
+    max-width:200px;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:180px;
+    
+}
+.card .card-foto .lecture-title:hover {
+    text-decoration:underline;
+    cursor:pointer;
+}
+.card .card-foto .card-data {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background:black;
+    opacity: 0.8;    
+    
+    
+}
+.card .card-foto .card-data span {
+    color: white;
+    font-size:14px;
+    position: relative;
+    float: left;
+    width:50%;
+    text-align:center;
+    padding: 8.5px 12px;
+    border-left:1px solid #dedede;
+    
+}
+
+.divisor {
+    width:100%;
+    border-bottom:1px solid #dedede;
+    padding:17px 0px;
+}
+.card .card-foto img {
+    width: 100%;
+}
+
+.card .card-info{
+    height:180px;
+    border: 1px solid #dedede;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position:relative;
+    padding-top:40px;
+}
+.card-info .btn-insc {
+    text-decoration: none;
+    color: white;
+    background: #ed4343;
+    padding: 6px 20px;
+    border-radius:0px;
+    font-size:14.5px;
+    float:left;
+    margin-bottom:30px;
+}
+.card-info .btn-insc:hover {
+    background: #dd2e2e;
+    box-shadow: none;
+}
+.card .card-info span {
+    font-size: 14px;
+}
+.card .card-info .card-users .foto-quarto {
+    margin-top: 20px;
+    float: left;
+    position: relative;
+    margin-left:20px;
+    width: 80px;
+}
+.card .card-info .card-users .foto-quarto img {
+    border-radius: 30px;
+    margin: auto;
+    display: block;
+    width:50px;
+}
+.card .card-info .card-users span {
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.cards-title {
+    margin-left:40px;
+    padding-top:40px;
+    margin-bottom:-40px;
+}
+.adm-footer {
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    align-items:center;
+    margin-top:20px;
+}
+.adm-links {
+    margin:auto;
+    display:block;
+    position:relative;
+    left:120px;
+}
+.will-paginate {
+    margin:auto;
+    display:block;
+    max-width:200px;
+    margin-top:50px;
+}
+.criar-scaffold2 {
+    margin:auto;
+    max-width:135px;
+    position:relative;
+    top:50px;
+}
+@media(max-width:960px) {
+    .card {
+        width:90%;
+        float:none;
+        margin:0 auto;
+        margin-top:50px;
+        
+    }
+}
+
+// ---------------------------------------------- Footer -----------------------------------------------
+
+.footer{
+    background:#222;
+    width:100%;
+    height:200px;
+    margin-top:50px;
+    bottom:0;
+   
+}
+
+.footer p{
+    text-align:center;
+    color:#fff;
+    text-transform:uppercase;
+}
+
+.tudo-footer{
+    width:500px;
+    height:100%;
+    background:#222;
+    margin:0 auto;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.redes-sociais-footer{
+    width:220px;
+    height:50px;
+    background:#222;
+    margin:0 auto;
+}
+
+.redes-sociais-footer a img{
+   display:inline-block;
+   margin-left:10px;
+   margin-right:10px;
+}
+
+//responsivo do footer
+
+@media only screen and (min-width:320px) and (max-width:767px){
+
+.content {
+    width:100%;
+    margin-left:0px;
+}
+.tudo-footer{
+    width:100%;
+    
+}
+
+}

@@ -1,0 +1,25 @@
+// Place all the styles related to the checkout controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//---------- Botões de Pagamento (payment_raw e payment_room) ---------------
+
+.btn-form-checkout{
+    display:block;
+    width:125px;
+    height:30px;
+    background:#eb4444;
+    color:#fff;
+    line-height:30px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.2s;
+    margin:0 auto;
+    border:none;
+    
+}
+
+.btn-form-checkout:hover{
+    background:red;
+    transition:0.2s;
+}

@@ -1,0 +1,307 @@
+.nav {
+    height:50px;
+    background-color:white;
+    z-index: 3004 !important;
+    position: fixed;
+    width: 100%;
+}
+.nav .nav-left {
+    float:left;
+}
+.nav .nav-left div {
+    float:left;
+}
+.nav .logo {
+   width: 65px;
+   margin-left:15px;
+   padding-top: 4px;
+}
+.nav .logo img{
+    position: relative;
+    top:2px;
+    left:16px;
+}
+.nav .busca {
+    width:300px;
+    margin-left:50px;
+    margin-top:8.5px;
+    font-size:14.5px;
+}
+.nav .busca input {
+    width:100%;
+    border-radius:0px;
+    border:1px solid #0066cc;
+    background:#f4f4f4;
+    padding:6px 12px;
+    outline:none;
+}
+.nav .nav-right {
+    float:right;
+}
+.nav .nav-right .nav-links {
+    float:right;
+    position:relative;
+    top:10px;
+    right:20px;
+}
+.nav .nav-right .nav-links a {
+    margin-left:10px;
+}
+.nav .nav-right .nav-links .sair-butao {
+    background:#0066cc;
+    width:100px;
+    padding:10px 6px;
+    border:none;
+    margin-top:-20px;
+    border-radius:4px;
+    color:white;
+    text-decoration:none;
+}
+.nav .nav-links span {
+    position:relative;
+    top:-11px;
+    width: 130px;
+    padding: 7px 24px;
+    color:white;
+    background-image: linear-gradient(-225deg, #0066cc 0%, #1D8FE1 48%, #1D8FE1 100%);
+    border:none;
+    border-radius: 300px;
+    height:30px;
+    font-size:14px;
+    text-decoration: none;
+}
+.nav .nav-links span:hover {
+    background:#0057af;
+    
+}
+.nav .nav-links img {
+    position:relative;
+    top:3px;
+}
+.menuzin {
+    position:fixed;
+    margin-top:50px;
+    width: 200px;
+    height: 100%;
+    background-color: #212121;
+    top:auto;
+    right: auto;
+    bottom:0;
+    left: 0;
+    z-index: 1003 !important;
+    padding-top: 65px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.menuzin .sobre-evento {
+    padding:20px 0px 25px 4px;
+    color:rgba(255, 255, 255, 0.8);
+    position:relative;
+    left:20px;
+    margin:auto;
+    display:block;
+    font-size:16px;
+    font-family: 'Lato', sans-serif;
+    font-style:bold;
+}
+.menuzin .sobre-evento a {
+    color:white;
+}
+.menuzin ul {
+    list-style: none;
+    float: left;
+    margin: 0 !important;
+    height: 100%;
+}
+.menuzin ul li:not(.sair) {
+    display: inline-block;
+    width: 200px;
+    position: relative;
+}
+.menuzin ul li a {
+    text-decoration: none;
+    padding: 15px 0 15px 0;
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+.sair {
+    width: 100%;
+    position: absolute;
+    bottom:0px;
+}
+.sair .usuario {
+    width:100%;
+}
+.sair .sair-link {
+    text-align: center;
+    background: #0066cc;
+    color:white;
+}
+.sair .sair-link span {
+    text-align: center;
+    color: white !important;
+    
+}
+.sair .usuario .user {
+    width: 45px;
+    height:45px;
+    border-radius:7px;
+    position: relative;
+    float: left;
+}
+.sair .usuario .user-link{
+    position: relative;
+    text-decoration: none;
+    color: white !important;
+    width:100%;
+    bottom:20px;
+    left:0px;
+}
+.sair span {
+    position:relative;
+    color:rgba(255, 255, 255, 0.8);
+    left:30px;
+    top:22px;
+    text-align:center;
+}
+.menu {
+    width: 15px;
+    top:50px;
+    left:200px;
+    opacity: 0.69;
+    position: fixed;
+    height: 70px;
+    background: black;
+    margin:0 !important;
+    z-index:1005;
+}
+.menu img {
+    position: relative;
+    top:17px;
+    right:5.3px;
+    
+}
+.arrow-left {
+    background: url(/assets/arrowleft.svg);
+    position: relative;
+    top:27px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    right:0px;
+    height: 40px;
+}
+.arrow-right {
+    background: url(/assets/arrowright.svg);
+    background-repeat: no-repeat;
+}
+.zeroleft {
+    left:0;
+}
+.ej-name {
+    font-size:12.5px;
+    color:#0066cc !important;
+}
+
+.menuzin ul li a img {
+    position: absolute;
+    top:15px;
+    left: 20px;
+}
+.menuzin ul li a .svg-icon path {
+    fill:#0066cc;
+}
+.menuzin ul li a strong {
+    position: relative;
+    left:53px;
+    top:2px;
+    color:rgba(255, 255, 255, 0.8);
+    font-size: 14.5px;
+}
+.menuzin ul li a:active {
+    color:#0066cc !important;
+}
+.home {
+    left:20px !important;
+    top:17px !important;
+}
+.active-not {
+    left:-200px;
+}
+.active {
+    left:0;   
+}
+.minimizar {
+    margin-left: 60px;
+}
+.hamburguer {
+    background-image: url(menu.svg) !important;
+    width: 24px !important;
+    margin-top:14px !important;
+}
+
+/* Dropdown Button */
+.drop{
+    cursor:pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    background-color:#fff;
+    z-index:1;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right:-80px;
+    top:40px;
+    background-color: #f9f9f9;
+    min-width: 220px;
+    box-shadow: 10px 10px 5px #888888;
+    z-index: 1;
+    border:1px solid #dedede;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #fff;
+    text-align:center;
+    line-height:5px;
+    text-decoration: none;
+    display:block;
+    width:200px;
+    height:40px;
+    background: #ed4343;
+    margin:20px auto;
+    border:1px solid #ed4343;
+    border-radius:5px;
+    transition:0.2s;
+    
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #E86565;
+    transition:0.2s;
+    
+}
+
+// .painel-de-controle-header{
+//     display:block;
+//     width:160px;
+//     height:40px;
+//     background:gray;
+//     margin:0 auto;
+    
+//     text-align:center;
+//     line-height:20px;
+// }
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}

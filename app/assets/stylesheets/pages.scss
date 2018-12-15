@@ -1,0 +1,913 @@
+li {
+    list-style: none;
+}
+ul, h1 {
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
+.ej {
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    justify-content:center;
+    align-items: center;
+    border-bottom:1px solid #dedede;
+    padding:22px 0 22px 0;
+}
+.ej span {
+    height:30px;
+    width:100px;
+    font-size:22px;
+    position:relative;
+    left:20px;
+    color:black;
+}
+.ej .ej-logo img {
+    height:40px;
+    position:relative;
+    top:2px;
+}
+.ej div {
+    width:33.3%;
+    position:relative;
+    left:20px;
+}
+
+// ----------------------------------------- Página - Home ---------------------------------
+
+body{
+    background:#f4f4f4;
+}
+
+
+//parte de cima da home (companheiros de quarto e pagamento)
+.conteudo-intro {
+    margin-left: 30px;
+    margin-top:30px;
+}
+
+.principal-1{
+    background:#f4f4f4;
+    width:80%;
+    height:300px;
+    margin-left:17%;
+    display:table;
+    margin-top:10%;
+}
+
+//companheiros de quarto
+
+.quartos{
+    background:#fff;
+    border:2px solid #f0f0f0;
+    width:41%;
+    height:260px;
+    float:left;
+    margin-left:2%;
+    
+}
+.quartos-info {
+    display:flex;
+    justify-content:center
+}
+.quartos h4{
+    padding-top:20px;
+    text-align:center;
+    font-family:'Avenir Thin';
+    float:left;
+}
+.quartos .quartos-img {
+    float:left;
+    position:relative;
+    top:-15px;
+}
+
+.quartos p {
+    text-align:center;
+}
+
+.btn-companheiros a{
+    padding: 10px 20px 10px 20px;
+    background:#eb4444;
+    display:inline-block;
+    margin-left:10px;
+    margin-top:5px;
+    color:#fff;
+    transition:0.2s;
+    
+}
+
+.btn-companheiros a:hover{
+     background:#ff1111;
+     transition:0.2s;
+}
+
+.btn-companheiros{
+    width:120px;
+    height:50px;
+    background:#fff;
+    display:table;
+    margin:0 auto;
+    
+}
+
+
+//pagamento-meus dados
+
+div.tab {
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    font-family: 'Avenir Demi';
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    border-right: 1px solid #dedede;
+    font-size:13px;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    border-bottom: 3px solid #ed4343;
+}
+.user-conteudo {
+    width:100%;
+    margin-top:40px;
+}
+
+.user-conteudo .user {
+    width: 51.2%;
+    height: 260px;
+    float: left;
+    margin-left:30px;
+    background:white;
+    border: 1px solid #dedede;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.user-conteudo .user .colunas:not(#pagamento) {
+    margin-left:50px;
+    font-family: 'Avenir Thin';
+}
+
+.user-conteudo .user .colunas:not(#pagamento) {
+    display: none;
+}
+
+.user-conteudo .user .colunas .coluna {
+    float: left;
+    margin-top:10px;
+    width: 40%;
+}
+
+.user-conteudo .user .colunas .coluna h4 strong {
+    font-family: 'Avenir Demi';
+}
+
+.user-conteudo .user .colunas .pagamento-status {
+    width: 100%;
+    font-family: 'Avenir Thin';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:20px;
+}
+
+.user-conteudo .user .colunas .pagamento-status .btn-pagamento {
+    width: 120px;
+    border: none;
+    border-radius:50px;
+    border: 1px solid #ed4343;
+    background-color:#ed4343;
+    color: white;
+    text-align: center;
+    font-family: 'Avenir Demi';
+    text-decoration: none;
+    padding: 7px 14px;
+    font-size:15px;
+}
+
+.user-conteudo .user .colunas .pagamento-status .btn-pagamento:hover {
+    background:#ed4343;
+    color:white;
+    opacity:0.85;
+}
+
+.titulo-aux-pagamento{
+    text-align:center;
+    padding-top:50px;
+}
+
+//parte de baixo da home (programação e ranking ejs)
+
+.principal-2{
+    background:#f4f4f4;
+    width:100%;
+    margin-top:2%;
+}
+
+.programacao{
+    background:#fff;
+    width:46.5%;
+    height:500px;
+    float:left;
+    margin:auto;
+    display:block;
+    margin-left:30px;
+    margin-right:30px;
+}
+
+.programacao-title {
+    background:url(/assets/efej-2015.jpg);
+    height:80px;
+    background-size:100%;
+    background-position:20% 50%;
+    position:relative;
+    display:flex;
+    justify-content:center
+}
+.programacao-title h2 {
+    text-align:center;
+    position:absolute;
+    color:white;
+    top:5px;
+}
+
+.ejs{
+    background:#fff;
+    width:46%;
+    height:500px;
+    float:left;
+    margin:auto;
+    display:block;
+}
+
+.ejs-1{
+    background:#fff;
+    width:100%;
+}
+
+.auto {
+    height:auto;
+}
+
+.ejs-title {
+    background:#0066cc;
+    border-bottom:1px solid #dedede;
+    height:80px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+}
+
+.ejs-title h2 {
+    text-align:center;
+    position:absolute;
+    color:white;
+    top:5px;
+}
+#membros {
+    width: 120px !important;
+}
+
+@media(max-width:1400px) and (min-width:9600px) {
+    .body {
+        zoom:0.8;
+         transform: scale(0.8);
+        -moz-transform-origin: 0 0;
+    }
+        
+}
+
+//----------------------  responsividade da home
+
+//SmartPhones
+@media only screen and (min-width:320px) and (max-width:767px){
+    .content {
+        padding-left:0px;
+    }
+    .conteudo-intro {
+    margin:10px auto;
+    margin-top:30px;
+    display:block;
+    width:300px;
+    }
+    
+    .conteudo-intro h1{
+        text-align:center;
+    }
+    
+    .quartos{
+        width:300px;
+        margin:10px auto;
+        float:none;
+    }
+    
+    .user-conteudo .user {
+        width: 300px;
+        height: 400px;
+        margin:10px auto;
+        float:none;
+    }
+    
+    .user-conteudo .user .colunas .coluna {
+        text-align:center;
+        width: 200px;
+        float:none;
+    }
+    
+    .user-conteudo .user .colunas .pagamento-status {
+        margin-top:100px;
+        float:none;
+    }
+    
+    .programacao{
+    width:300px;
+    height:500px;
+    float:none;
+    margin:10px auto;
+    
+    }
+    
+    .ejs{
+    width:300px;
+    height:500px;
+    float:none;
+    margin:10px auto;
+    }
+
+}
+
+//Ipad
+@media only screen and (min-width:768px) and (max-width:1024px){
+    .conteudo-intro {
+    margin:10px auto;
+    margin-top:30px;
+    display:block;
+    width:500px;
+    }
+    
+    .conteudo-intro h1{
+        text-align:center;
+    }
+    
+    .quartos{
+        width:500px;
+        margin:10px auto;
+        float:none;
+    }
+    
+    .user-conteudo .user {
+        width: 500px;
+        height: 400px;
+        margin:10px auto;
+        float:none;
+    }
+    
+    .user-conteudo .user .colunas .coluna {
+        width: 400px;
+        text-align:center;
+        float:none;
+    }
+    
+    .user-conteudo .user .colunas .pagamento-status {
+        margin-top:100px;
+        float:none;
+    }
+    
+    .programacao{
+    width:500px;
+    height:500px;
+    float:none;
+    margin:10px auto;
+    
+    }
+    
+    .ejs{
+    width:500px;
+    height:500px;
+    float:none;
+    margin:10px auto;
+    }
+
+}
+
+
+// ----------------------------------------- Página(Pagamentos) ---------------------------------
+
+.card-pagamento {
+    width:95%;
+    max-width:700px;
+    border:1px solid #dedede;
+    -webkit-box-shadow: 0px 0px 171px -57px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 171px -57px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 171px -57px rgba(0,0,0,0.75);
+    margin:auto;
+    margin-top:50px;
+}
+.card-vantagens {
+    width:100%;
+    margin:auto;
+    margin-top:60px;
+}
+.card-vantagem {
+    width:80%;
+    text-align:center;
+    margin:auto;
+    display:block;
+    margin-top:30px;
+}
+.card-vantagem span {
+    color:dimgrey;
+    font-size:14px;
+    position:relative;
+    top:-10px;
+}
+.card-pagar {
+    margin-top:50px;
+    width:100%;
+}
+.card-hosp {
+    width:50%;
+    height:180px;
+    float:left;
+    border-left:1px solid #dedede;
+}
+.barra {
+    margin-left:1px solid #dedede;
+}
+.card-hosp .info {
+    width:100%;
+    height:140px;
+    // max-width:200px;
+    margin:auto;
+    display:block;
+    text-align:center;
+}
+.card-hosp h1 {
+    font-size:25px;
+    color:black;
+    width:100%;
+    margin:auto;
+    margin-bottom:10px;
+    margin-top:50px;
+    cursor:pointer;
+}
+.card-hosp a {
+    width:100%;
+    background:black;
+    padding:11px 35px;
+    color:white;
+}
+.card-hosp a:hover {
+    background:#ed4343;
+    color:white;
+    opacity:0.85;
+}
+.card-hosp h3 {
+    width:140px;
+    color:black;
+    text-align:center;
+    margin:auto;
+    margin-bottom:20px;
+}
+.no-hosp {
+    color:#6F54CA3;
+}
+.no-hosp a {
+    color:white;
+  
+}
+.no-hosp a:hover {
+    background:#ed4343;
+    color:white;
+    opacity:0.85;
+}
+.no-hosp h1 {
+    color:black;
+}
+.no-hosp h3 {
+    width:140px;
+    text-align:center;
+    margin:auto;
+    margin-bottom:20px;
+    color:black;
+}
+.card-footer {
+    width:100%;
+    max-width:700px;
+}
+.card-footer img {
+    width:100%;
+    max-width:400px;
+    margin:auto;
+    display:block;
+}
+.container ul li {
+    width:25%;
+    float:left;
+    margin-top:100px;
+    text-align:center;
+}
+.container ul li img {
+    margin:auto;
+    display:block;
+}
+.user_control {
+    padding-bottom:36px;
+}
+.ej_control {
+    padding-bottom:50px;
+}
+.pageTitle {
+    text-align:center;
+    margin-top:50px;
+}
+.user-padrao {
+    width:40px;
+    position:relative;
+    margin-left:-7px;
+}
+.limpar {
+    clear: both;
+}
+
+// ------------------------------ Formulários do control_Painel -----------------------------
+
+//controlpainel.html
+.container-control-painel{
+    display:block;
+    width:500px;
+    margin:30px auto;
+    border-bottom:2px solid #000;
+}
+
+//Forms do Control-Painel
+
+.titulo-forms-control-painel{
+    display:block;
+    width:400px;
+    height:60px;
+    margin:20px auto;
+    border:3.5px solid #eb4444;
+}
+
+.titulo-forms-control-painel h1{
+    text-align:center;
+    line-height:55px;
+    text-transform:uppercase;
+    color:#eb4444;
+    font-size:1.5em;
+}
+
+.actions-control-painel{
+    display:block;
+    width:75px;
+    height:40px;
+    margin:0 auto;
+    margin-bottom:30px;
+}
+
+//form Category
+
+.titulo-category{
+    text-align:center;
+}
+
+.container-category{
+    display:inline-block;
+    width:49%;
+    height:80px;
+    border:1px solid #000;
+    margin-bottom:30px;
+    box-shadow: 5px 5px #888;
+}
+
+.container-category p{
+    text-align:center;
+}
+
+//------------------- click menu Control-Painel ----
+
+// click menu Criar Hoteis
+#btn-menu {
+    display:block;
+    width:100%;
+    background-color: #eb4444;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom:10px;
+    color:#fff;
+    text-align:center;
+}
+
+#container-forms {
+  display: block;
+}
+
+// click menu Criar Quartos
+#btn-menu-quarto {
+    display:block;
+    width:100%;
+    background-color: #eb4444;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom:10px;
+    color:#fff;
+    text-align:center;
+}
+
+#container-forms-quartos {
+  display: block;
+}
+
+// click menu Criar Palestras
+#btn-menu-palestras {
+    display:block;
+    width:100%;
+    background-color: #eb4444;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom:10px;
+    color:#fff;
+    text-align:center;
+}
+
+#container-forms-palestras {
+  display: block;
+}
+
+// click menu Criar Workshops
+#btn-menu-workshop {
+    display:block;
+    width:100%;
+    background-color: #eb4444;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom:10px;
+    color:#fff;
+    text-align:center;
+}
+
+#container-forms-workshop {
+  display: block;
+}
+
+// click menu Criar Categoria
+#btn-menu-category {
+    display:block;
+    width:100%;
+    background-color: #eb4444;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom:10px;
+    color:#fff;
+    text-align:center;
+}
+
+#container-forms-category {
+  display: block;
+}
+
+// responsividade do control-painel
+
+@media only screen and (min-width:320px) and (max-width:767px){
+    //controlpainel.html
+    .container-control-painel{
+        display:block;
+        width:95%;
+        margin:30px auto;
+        border-bottom:2px solid #000;
+    }
+    
+    //Forms do Control-Painel
+
+    .titulo-forms-control-painel{
+        width:95%;
+    }
+    
+    .titulo-forms-control-painel h1{
+        font-size:1.2em;
+    }
+    
+    .container ul li{
+        display:block;
+        width:95%;
+        margin:20px auto;
+    }
+}
+
+// ----------------Countdown e responsivo da home (Quartos)---------------------------------------------
+
+
+.corpo-relogio-quartos{
+  width:98%;
+  height:170px;
+  background:#222;
+  border-radius:5px;
+  margin:20px  auto;
+  
+}
+
+.corpo-relogio-quartos p{
+    text-align:center;
+    color:#fff;
+    text-transform:uppercase;
+    letter-spacing: 4px;
+    font-size:0.8em;
+    font-weight:bold;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.li-countdown-quartos{
+	display: inline-block;
+	font-size: 24px;
+	width:24%;
+	letter-spacing: 4px; 
+	text-transform: uppercase;
+	font-family: 'Passion One', cursive;
+	margin: 1% auto;
+}
+
+
+#tempo-quartos{	
+	text-align: center;	
+	color: #F8F8FF;
+	width: 98%;
+	height:170px;
+	margin:0 auto;
+	
+}
+
+
+#dias-quartos, #horas-quartos, #minutos-quartos, #segundos-quartos{
+      font-size: 50px;
+      line-height:80px;
+      display:inline-block;
+      width:100px;
+      height:80px;
+      background:#fff;
+      border-radius:5px;
+      color:#222;
+}
+
+//Responsividade do countdown
+
+@media only screen and (min-width:320px) and (max-width:767px){
+    .li-countdown-quartos{
+    	display:inline-block;
+    	font-size: 20px;
+    	width:40%;
+    	height:100px;
+    }
+    
+    .li-countdown-quartos p{
+        display:block;
+        margin:0 auto;
+    }
+    
+    #dias-quartos, #horas-quartos, #minutos-quartos, #segundos-quartos{
+    font-size: 30px;
+    line-height:60px;
+    margin:0 auto;
+    display:block;
+    width:80px;
+    height:60px;
+    
+    }
+    
+    .corpo-relogio-quartos{
+      height:230px;
+    }
+    
+    #tempo-quartos{
+        height:230px;
+    }
+}
+
+
+// ----------------Countdown e responsivo da home (Sua Programação)---------------------------------------------
+
+.corpo-relogio{
+  width:98%;
+  height:170px;
+  background:#222;
+  border-radius:5px;
+  margin:20px  auto;
+  
+}
+
+.corpo-relogio p{
+    text-align:center;
+    color:#fff;
+    text-transform:uppercase;
+    letter-spacing: 4px;
+    font-size:0.8em;
+    font-weight:bold;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.li-countdown{
+	display: inline-block;
+	font-size: 24px;
+	width:24%;
+	letter-spacing: 4px; 
+	text-transform: uppercase;
+	font-family: 'Passion One', cursive;
+	margin: 1% auto;
+}
+
+
+#tempo{	
+	text-align: center;	
+	color: #F8F8FF;
+	width: 98%;
+	height:170px;
+	margin:0 auto;
+	
+}
+
+
+#dias, #horas, #minutos, #segundos{
+      font-size: 50px;
+      line-height:80px;
+      display:inline-block;
+      width:100px;
+      height:80px;
+      background:#fff;
+      border-radius:5px;
+      color:#222;
+}
+
+//Responsividade do countdown
+
+@media only screen and (min-width:320px) and (max-width:767px){
+    .li-countdown{
+    	display:inline-block;
+    	font-size: 20px;
+    	width:40%;
+    	height:100px;
+    }
+    
+    .li-countdown p{
+        display:block;
+        margin:0 auto;
+    }
+    
+    #dias, #horas, #minutos, #segundos{
+    font-size: 30px;
+    line-height:60px;
+    margin:0 auto;
+    display:block;
+    width:80px;
+    height:60px;
+    
+    }
+    
+    .corpo-relogio{
+      height:230px;
+    }
+    
+    #tempo{
+        height:230px;
+    }
+    .card-pagamento {
+        
+    }
+    .card-hosp {
+        width:100%;
+        float:none;
+        border:none;
+        border-bottom:1px solid #dedede;
+        margin-top:30px;
+        height:230px;
+    }
+    .card-footer img {
+        padding:12px;
+        
+    }
+}
+
+
